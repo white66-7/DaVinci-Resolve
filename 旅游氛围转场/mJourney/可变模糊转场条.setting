@@ -1,0 +1,313 @@
+{
+	Tools = ordered() {
+		mJourney_Transition_11 = MacroOperator {
+			CtrlWZoom = false,
+			NameSet = true,
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Switch",
+					Source = "Background",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Switch",
+					Source = "Foreground",
+				},
+				Label1 = InstanceInput {
+					SourceOp = "CustomLabels",
+					Source = "Label1",
+					Page = "Controls",
+					Default = 1,
+					Name = "转场控制",
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Transition_Mrg",
+					Source = "FlipDirection",
+					Page = "Controls",
+					Default = 0,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Transition_Color",
+					Source = "TopLeftRed",
+					Name = "转场条颜色",
+					ControlGroup = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Transition_Color",
+					Source = "TopLeftGreen",
+					Name = "转场条颜色",
+					ControlGroup = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Transition_Color",
+					Source = "TopLeftBlue",
+					Name = "转场条颜色",
+					ControlGroup = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Transition_Color",
+					Source = "TopLeftAlpha",
+					Name = "转场条颜色",
+					ControlGroup = 1,
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "VariBlur1",
+					Source = "Blend",
+					Page = "Controls",
+					Default = 1,
+					Name = "模糊强度",
+				},
+				Input9 = InstanceInput {
+					SourceOp = "VariBlur1",
+					Source = "Input",
+					Name = "模糊",
+				},
+			},
+			Outputs = {
+				Output1 = InstanceOutput {
+					SourceOp = "CustomLabels",
+					Source = "Output",
+				},
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 369.037, 120.992 },
+				Flags = {
+					AllowPan = false,
+					GridSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true,
+				},
+				Size = { 580.179, 130.886, 118, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 220, 89.6591 },
+			},
+			Tools = ordered() {
+				Switch = Dissolve {
+					Transitions = { [0] = "DFTDissolve" },
+					NameSet = true,
+					Inputs = {
+						Mix = Input {
+							SourceOp = "AnimCurves2",
+							Source = "Value",
+						},
+						Background = Input {
+							SourceOp = "MediaIn1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "MediaIn2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -220, -16.5 } },
+				},
+				Transition_Color = Background {
+					ExtentSet = true,
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "MaskMap",
+							Source = "Output",
+						},
+						MaskChannel = Input { Value = 5 },
+						GlobalIn = Input { Value = -9999 },
+						GlobalOut = Input { Value = 99999 },
+						Width = Input { Value = 1920 },
+						Height = Input { Value = 1080 },
+						UseFrameFormatSettings = Input { Value = 1 },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" } },
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, -49.5 } },
+				},
+				Transition_Mrg = Merge {
+					NameSet = true,
+					Inputs = {
+						Background = Input {
+							SourceOp = "VariBlur1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Transition_Color",
+							Source = "Output",
+						},
+						FlipHoriz = Input { Expression = "FlipDirection" },
+						PerformDepthMerge = Input { Value = 0 },
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, -16.5 } },
+					UserControls = ordered() {
+						FlipDirection = {
+							CBC_TriState = false,
+							INP_Integer = false,
+							INPID_InputControl = "CheckboxControl",
+							INP_MaxScale = 1,
+							INP_Default = 0,
+							INP_MinScale = 0,
+							LINKID_DataType = "Number",
+							ICS_ControlPage = "Controls",
+							LINKS_Name = "翻转方向",
+						},
+					},
+				},
+				CustomLabels = Dissolve {
+					Transitions = { [0] = "DFTDissolve" },
+					NameSet = true,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Transition_Mrg",
+							Source = "Output",
+						},
+						Label1 = Input { Value = 1 },
+					},
+					ViewInfo = OperatorInfo { Pos = { 110, -16.5 } },
+					UserControls = ordered() {
+						Label1 = {
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							INPID_InputControl = "LabelControl",
+							LBLC_NumInputs = 7,
+							INP_External = false,
+							LINKID_DataType = "Number",
+							INP_Passive = true,
+							ICS_ControlPage = "Controls",
+							LINKS_Name = "转场控制",
+						},
+					},
+				},
+				MaskMap = Background {
+					NameSet = true,
+					Inputs = {
+						GlobalOut = Input { Value = 99999 },
+						Width = Input { Value = 1920 },
+						Height = Input { Value = 1080 },
+						UseFrameFormatSettings = Input { Value = 1 },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" } },
+						Type = Input { Value = FuID { "Gradient" } },
+						Start = Input { Value = { 1.5, 0.5 } },
+						End = Input { Value = { -0.5, 0.5 } },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0, 0, 0, 1 },
+									[0.25] = { 1, 1, 1, 1 },
+									[0.75] = { 1, 1, 1, 1 },
+									[1] = { 0, 0, 0, 1 },
+								},
+							},
+						},
+						Offset = Input {
+							SourceOp = "AnimCurves1",
+							Source = "Value",
+						},
+						GlobalIn = Input { Value = -9999 },
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, -82.5 } },
+					ExtentSet = true,
+				},
+				VariBlur1 = VariBlur {
+					Inputs = {
+						XBlurSize = Input { Value = 5 },
+						Input = Input {
+							SourceOp = "Switch",
+							Source = "Output",
+						},
+						BlurImage = Input {
+							SourceOp = "MaskMap",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -110, -16.5 } },
+					UserControls = ordered() {
+						Blend = {
+							LINKS_Name = "开/关",
+							LINKID_DataType = "Number",
+							INPID_InputControl = "CheckboxControl",
+							INP_Default = 1,
+							INP_Integer = false,
+							INP_MinScale = 0,
+							INP_MaxScale = 1,
+							INP_MinAllowed = 0,
+							INP_MaxAllowed = 1,
+							CBC_TriState = false,
+							ICS_ControlPage = "Controls",
+						},
+					},
+				},
+			},
+			UserControls = ordered() {
+				Label = {
+					INP_Integer = false,
+					LBLC_DropDownButton = false,
+					INPID_InputControl = "ButtonControl",
+					BTNCS_Execute = "os.execute('open \"\" \"https://www.motionvfx.com/dvr\"')\n os.execute('start \"\" \"https://www.motionvfx.com\"')\n",
+					IC_ControlPage = -1,
+					INP_External = false,
+					LINKID_DataType = "Number",
+					INP_Passive = true,
+					LINKS_Name = "mJourney by MotionVFX",
+				},
+			},
+		},
+		AnimCurves2 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Curve = Input { Value = FuID { "Custom" } },
+				Lookup = Input {
+					SourceOp = "AnimCurves2Lookup",
+					Source = "Value",
+				},
+				Scale = Input { Value = 1 },
+			},
+		},
+		AnimCurves2Lookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0.470817120622568] = { 0,
+						RH = { 0.488975356679637, 0 },
+						Flags = { Linear = true },
+					},
+					[0.525291828793774] = { 1,
+						LH = { 0.507133592736706, 1 },
+					},
+				},
+			},
+			SplineColor = {
+				Red = 255,
+				Green = 255,
+				Blue = 255,
+			},
+			CtrlWZoom = false,
+			NameSet = true,
+		},
+		AnimCurves1 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Curve = Input { Value = FuID { "Custom" } },
+				Lookup = Input {
+					SourceOp = "AnimCurvesonMaskMapLookup",
+					Source = "Value",
+				},
+				Scale = Input { Value = -1.5 },
+				Offset = Input { Value = 0.75 },
+			},
+		},
+		AnimCurvesonMaskMapLookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0,
+						RH = { 0.743545734080416, 0 },
+					},
+					[1] = { 1,
+						LH = { 0.245800694268072, 1 },
+					},
+				},
+			},
+			SplineColor = {
+				Red = 255,
+				Green = 255,
+				Blue = 255,
+			},
+		},
+	},
+}

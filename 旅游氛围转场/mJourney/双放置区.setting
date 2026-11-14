@@ -1,0 +1,890 @@
+{
+	Tools = ordered() {
+		mJourney_Transition_02 = MacroOperator {
+			CtrlWZoom = false,
+			NameSet = true,
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Media1_Pivot",
+					Source = "Input",
+					Name = "背景",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Media2_Pivot",
+					Source = "Input",
+				},
+				Label1 = InstanceInput {
+					Name = "转场控制",
+					Source = "Label1",
+					SourceOp = "CustomLabels",
+					Page = "Controls",
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Direction_Xf",
+					Source = "InvertTransform",
+					Page = "Controls",
+					Name = "翻转方向",
+				},
+				Label2 = InstanceInput {
+					Source = "Label2",
+					SourceOp = "CustomLabels",
+					Page = "Controls",
+					Name = "放置区控制",
+				},
+				Input4 = InstanceInput {
+					SourceOp = "EmptyDZ01",
+					Source = "Clip",
+					Name = "放置区1 照片",
+				},
+				Input5 = InstanceInput {
+					SourceOp = "LoaderMediaDx1",
+					Source = "Mix",
+					Page = "Controls",
+					Default = 0,
+					Name = "放置区1 类型",
+				},
+				Input6 = InstanceInput {
+					SourceOp = "MediaSource1",
+					Source = "ClipName",
+					Name = "放置区1 视频",
+				},
+				Input7 = InstanceInput {
+					SourceOp = "DZTransform1",
+					Source = "Center",
+					Name = "放置区1 平移",
+				},
+				Input8 = InstanceInput {
+					SourceOp = "DZTransform1",
+					Source = "Size",
+					Default = 1,
+					Name = "放置区1 内部缩放",
+				},
+				Input9 = InstanceInput {
+					SourceOp = "EmptyDZ02",
+					Source = "Clip",
+					Name = "放置区2 照片",
+				},
+				Input10 = InstanceInput {
+					SourceOp = "LoaderMediaDx2",
+					Source = "Mix",
+					Page = "Controls",
+					Default = 0,
+					Name = "放置区2 类型",
+				},
+				Input11 = InstanceInput {
+					SourceOp = "MediaSource2",
+					Source = "ClipName",
+					Name = "放置区2 视频",
+				},
+				Input12 = InstanceInput {
+					SourceOp = "DZTransform2",
+					Source = "Center",
+					Name = "放置区2 平移",
+				},
+				Input13 = InstanceInput {
+					SourceOp = "DZTransform2",
+					Source = "Size",
+					Default = 1,
+					Name = "放置区2 内部缩放",
+				},
+			},
+			Outputs = {
+				Output1 = InstanceOutput {
+					SourceOp = "CustomLabels",
+					Source = "Output",
+				},
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 990, 379.5 },
+				Flags = {
+					Expanded = true,
+					AllowPan = false,
+					GridSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true,
+				},
+				Size = { 795.666, 308.583, 313.833, 92.8103 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { -825, -172.864 },
+			},
+			Tools = ordered() {
+				EmptyDZ01 = Loader {
+					Clips = {
+						[0] = Clip {
+							ID = "Clip1",
+							Filename = "",
+							FormatID = "",
+							StartFrame = -1,
+							LengthSetManually = true,
+							TrimIn = 0,
+							TrimOut = 0,
+							ExtendFirst = 0,
+							ExtendLast = 0,
+							Loop = 1,
+							AspectMode = 0,
+							Depth = 0,
+							GlobalStart = 0,
+							GlobalEnd = 0,
+						},
+					},
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						MissingFrames = Input { Value = 1 },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" } },
+						Loop = Input { Value = 1 },
+					},
+					ViewInfo = OperatorInfo { Pos = { 715, 181.5 } },
+				},
+				DropZone01 = Loader {
+					Clips = {
+						Clip {
+							ID = "Clip1",
+							Filename = "Setting:\\Media\\Drop_Zone_A.jpg",
+							FormatID = "JpegFormat",
+							StartFrame = -1,
+							LengthSetManually = true,
+							TrimIn = 0,
+							TrimOut = 0,
+							ExtendFirst = 0,
+							ExtendLast = 0,
+							Loop = 0,
+							AspectMode = 0,
+							Depth = 0,
+							TimeCode = 0,
+							GlobalStart = 0,
+							GlobalEnd = 0,
+						},
+					},
+					NameSet = true,
+					Inputs = {
+						MissingFrames = Input { Value = 1 },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" } },
+						Loop = Input { Value = 1 },
+					},
+					ViewInfo = OperatorInfo { Pos = { 605, 214.5 } },
+				},
+				EmptyDZ02 = Loader {
+					Clips = {
+						[0] = Clip {
+							ID = "Clip1",
+							Filename = "",
+							FormatID = "",
+							StartFrame = -1,
+							LengthSetManually = true,
+							TrimIn = 0,
+							TrimOut = 0,
+							ExtendFirst = 0,
+							ExtendLast = 0,
+							Loop = 1,
+							AspectMode = 0,
+							Depth = 0,
+							GlobalStart = 0,
+							GlobalEnd = 0,
+						},
+					},
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						MissingFrames = Input { Value = 1 },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" } },
+						Loop = Input { Value = 1 },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1045, 181.5 } },
+				},
+				DropZone02 = Loader {
+					Clips = {
+						Clip {
+							ID = "Clip1",
+							Filename = "Setting:\\Media\\Drop_Zone_B.jpg",
+							FormatID = "JpegFormat",
+							StartFrame = -1,
+							LengthSetManually = true,
+							TrimIn = 0,
+							TrimOut = 0,
+							ExtendFirst = 0,
+							ExtendLast = 0,
+							Loop = 0,
+							AspectMode = 0,
+							Depth = 0,
+							TimeCode = 0,
+							GlobalStart = 0,
+							GlobalEnd = 0,
+						},
+					},
+					NameSet = true,
+					Inputs = {
+						MissingFrames = Input { Value = 1 },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" } },
+						Loop = Input { Value = 1 },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1155, 214.5 } },
+				},
+				Media2_Pivot = Transform {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Center = Input {
+							SourceOp = "Vector1",
+							Source = "Position",
+						},
+						Input = Input {
+							SourceOp = "MediaIn2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 605, 313.5 } },
+				},
+				Media_Mrg = Merge {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Media1_Pivot",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Media2_Pivot",
+							Source = "Output",
+						},
+						ClampCoverage = Input { Value = 0 },
+						PerformDepthMerge = Input { Value = 0 },
+					},
+					ViewInfo = OperatorInfo { Pos = { 715, 313.5 } },
+				},
+				DropZone1_Mrg = Merge {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "DropZone1_Mask",
+							Source = "Mask",
+						},
+						Background = Input {
+							SourceOp = "Media_Mrg",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "DZTransform1",
+							Source = "Output",
+						},
+						Center = Input {
+							SourceOp = "Vector3",
+							Source = "Position",
+						},
+						PerformDepthMerge = Input { Value = 0 },
+					},
+					ViewInfo = OperatorInfo { Pos = { 825, 313.5 } },
+				},
+				DropZone1_Mask = RectangleMask {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" } },
+						MaskWidth = Input { Value = 1920 },
+						MaskHeight = Input { Value = 1080 },
+						PixelAspect = Input { Value = { 1, 1 } },
+						UseFrameFormatSettings = Input { Value = 1 },
+						ClippingMode = Input { Value = FuID { "None" } },
+						Center = Input {
+							Value = { 0.876652116216085, 0.5 },
+							Expression = "DropZone1_Mrg.Center",
+						},
+						Width = Input {
+							SourceOp = "AnimCurves3",
+							Source = "Value",
+						},
+						Height = Input { Value = 1 },
+						GlobalIn = Input { Value = -9999 },
+						GlobalOut = Input { Value = 99999 },
+					},
+					ViewInfo = OperatorInfo { Pos = { 825, 346.5 } },
+					ExtentSet = true,
+				},
+				DropZone2_Mask = RectangleMask {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" } },
+						MaskWidth = Input { Value = 1920 },
+						MaskHeight = Input { Value = 1080 },
+						PixelAspect = Input { Value = { 1, 1 } },
+						UseFrameFormatSettings = Input { Value = 1 },
+						ClippingMode = Input { Value = FuID { "None" } },
+						Center = Input {
+							Value = { 1.11834788378392, 0.5 },
+							Expression = "DropZone2_Mrg.Center",
+						},
+						Width = Input {
+							SourceOp = "AnimCurves_2",
+							Source = "Value",
+						},
+						Height = Input { Value = 1 },
+						GlobalIn = Input { Value = -9999 },
+						GlobalOut = Input { Value = 99999 },
+					},
+					ViewInfo = OperatorInfo { Pos = { 935, 346.5 } },
+					ExtentSet = true,
+				},
+				DropZone2_Mrg = Merge {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "DropZone2_Mask",
+							Source = "Mask",
+						},
+						Background = Input {
+							SourceOp = "DropZone1_Mrg",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "DZTransform2",
+							Source = "Output",
+						},
+						Center = Input {
+							SourceOp = "Vector",
+							Source = "Position",
+						},
+						PerformDepthMerge = Input { Value = 0 },
+					},
+					ViewInfo = OperatorInfo { Pos = { 935, 313.5 } },
+				},
+				Direction_Xf = Transform {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Center = Input {
+							SourceOp = "Vector2",
+							Source = "Position",
+						},
+						Input = Input {
+							SourceOp = "DropZone2_Mrg",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1045, 313.5 } },
+					UserControls = ordered() {
+						InvertTransform = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							INPID_InputControl = "CheckboxControl",
+							INP_MaxScale = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							CBC_TriState = false,
+							LINKS_Name = "翻转方向",
+						},
+					},
+				},
+				Media1_Pivot = Transform {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Input = Input {
+							SourceOp = "MediaIn1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 715, 280.5 } },
+				},
+				CustomLabels = Dissolve {
+					Transitions = { [0] = "DFTDissolve" },
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Direction_Xf",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1155, 313.5 } },
+					UserControls = ordered() {
+						Label1 = {
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							INPID_InputControl = "LabelControl",
+							LBLC_NumInputs = 1,
+							INP_External = false,
+							LINKID_DataType = "Number",
+							INP_Passive = true,
+							ICS_ControlPage = "Controls",
+							LINKS_Name = "转场控制",
+						},
+						Label2 = {
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							INPID_InputControl = "LabelControl",
+							LBLC_NumInputs = 10,
+							INP_External = false,
+							LINKID_DataType = "Number",
+							INP_Passive = true,
+							ICS_ControlPage = "Controls",
+							LINKS_Name = "放置区控制",
+						},
+					},
+				},
+				MediaSource1 = MediaIn {
+					ExtentSet = true,
+					NameSet = true,
+					Inputs = {
+						GlobalOut = Input { Value = 23 },
+						AudioTrack = Input {
+							Value = FuID { "Timeline Audio" },
+						},
+						Layer = Input { Value = "0" },
+						ClipTimeEnd = Input { Value = 23 },
+						Loop = Input { Value = 1 },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" } },
+						LeftAudio = Input {
+							SourceOp = "Left",
+							Source = "Data",
+						},
+						RightAudio = Input {
+							SourceOp = "Right",
+							Source = "Data",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 825, 148.5 } },
+				},
+				MediaSpeed1 = TimeSpeed {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						InterpolateBetweenFrames = Input { Value = 0 },
+						SampleSpread = Input { Disabled = true },
+						Input = Input {
+							SourceOp = "MediaSource1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 825, 181.5 } },
+				},
+				DzResize1 = BetterResize {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Width = Input {
+							Value = 1920,
+							Expression = "comp:GetPrefs(\"Comp.FrameFormat.Width\")",
+						},
+						Height = Input { Value = 1920 },
+						KeepAspect = Input { Value = 1 },
+						HiQOnly = Input { Value = 0 },
+						PixelAspect = Input { Value = { 1, 1 } },
+						Input = Input {
+							SourceOp = "LoaderMediaDx1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 825, 247.5 } },
+				},
+				DZTransform1 = Transform {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Input = Input {
+							SourceOp = "DzResize1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 825, 280.5 } },
+				},
+				LoaderMediaDx1 = Dissolve {
+					Transitions = { [0] = "DFTDissolve" },
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Background = Input {
+							SourceOp = "LoadersDx1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "MediaSpeed1",
+							Source = "Output",
+						},
+						Mix = Input { Value = 0 },
+					},
+					ViewInfo = OperatorInfo { Pos = { 825, 214.5 } },
+					UserControls = ordered() {
+						Mix = {
+							{ MBTNC_AddButton = "Photo" },
+							{ MBTNC_AddButton = "Video" },
+							INP_MaxAllowed = 1,
+							INP_Integer = false,
+							INPID_InputControl = "MultiButtonControl",
+							MBTNC_ShowBasicButton = true,
+							INP_MaxScale = 1,
+							INP_Default = 1,
+							ICS_ControlPage = "Controls",
+							INP_MinScale = 0,
+							INP_MinAllowed = 0,
+							LINKID_DataType = "Number",
+							MBTNC_ShowName = false,
+							MBTNC_StretchToFit = false,
+							MBTNC_ShowToolTip = false,
+							LINKS_Name = "背景/前景",
+						},
+					},
+				},
+				LoadersDx1 = Dissolve {
+					Transitions = { [0] = "DFTDissolve" },
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Background = Input {
+							SourceOp = "DropZone01",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "EmptyDZ01",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 715, 214.5 } },
+				},
+				DzResize2 = BetterResize {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Width = Input {
+							Value = 1920,
+							Expression = "comp:GetPrefs(\"Comp.FrameFormat.Width\")",
+						},
+						Height = Input { Value = 1920 },
+						KeepAspect = Input { Value = 1 },
+						HiQOnly = Input { Value = 0 },
+						PixelAspect = Input { Value = { 1, 1 } },
+						Input = Input {
+							SourceOp = "LoaderMediaDx2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 935, 247.5 } },
+				},
+				LoaderMediaDx2 = Dissolve {
+					Transitions = { [0] = "DFTDissolve" },
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Background = Input {
+							SourceOp = "LoadersDx2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "MediaSpeed2",
+							Source = "Output",
+						},
+						Mix = Input { Value = 0 },
+					},
+					ViewInfo = OperatorInfo { Pos = { 935, 214.5 } },
+					UserControls = ordered() {
+						Mix = {
+							{ MBTNC_AddButton = "Photo" },
+							{ MBTNC_AddButton = "Video" },
+							INP_MaxAllowed = 1,
+							INP_Integer = false,
+							INPID_InputControl = "MultiButtonControl",
+							MBTNC_ShowBasicButton = true,
+							INP_MaxScale = 1,
+							INP_Default = 1,
+							ICS_ControlPage = "Controls",
+							INP_MinScale = 0,
+							INP_MinAllowed = 0,
+							LINKID_DataType = "Number",
+							MBTNC_ShowName = false,
+							MBTNC_StretchToFit = false,
+							MBTNC_ShowToolTip = false,
+							LINKS_Name = "背景/前景",
+						},
+					},
+				},
+				LoadersDx2 = Dissolve {
+					Transitions = { [0] = "DFTDissolve" },
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Background = Input {
+							SourceOp = "DropZone02",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "EmptyDZ02",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1045, 214.5 } },
+				},
+				MediaSpeed2 = TimeSpeed {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						InterpolateBetweenFrames = Input { Value = 0 },
+						SampleSpread = Input { Disabled = true },
+						Input = Input {
+							SourceOp = "MediaSource2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 935, 181.5 } },
+				},
+				MediaSource2 = MediaIn {
+					ExtentSet = true,
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						GlobalOut = Input { Value = 23 },
+						AudioTrack = Input {
+							Value = FuID { "Timeline Audio" },
+						},
+						Layer = Input { Value = "0" },
+						ClipTimeEnd = Input { Value = 23 },
+						Loop = Input { Value = 1 },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" } },
+						LeftAudio = Input {
+							SourceOp = "Left_1",
+							Source = "Data",
+						},
+						RightAudio = Input {
+							SourceOp = "Right_1",
+							Source = "Data",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 935, 148.5 } },
+				},
+				DZTransform2 = Transform {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Input = Input {
+							SourceOp = "DzResize2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 935, 280.5 } },
+				},
+			},
+			UserControls = ordered() {
+				Label = {
+					LINKID_DataType = "Number",
+					INPID_InputControl = "ButtonControl",
+					INP_Integer = false,
+					LBLC_DropDownButton = false,
+					BTNCS_Execute = "os.execute('open \"\" \"https://www.motionvfx.com/dvr\"')\n os.execute('start \"\" \"https://www.motionvfx.com\"')\n",
+					INP_External = false,
+					INP_Passive = true,
+					IC_ControlPage = -1,
+					LINKS_Name = "mJourney by MotionVFX",
+				},
+			},
+		},
+		Vector1 = Vector {
+			CtrlWZoom = false,
+			Inputs = {
+				Distance = Input { Value = 1 },
+				Angle = Input {
+					Expression = "iif(Direction_Xf.InvertTransform==0,0,180)",
+				},
+			},
+		},
+		Vector3 = Vector {
+			CtrlWZoom = false,
+			Inputs = {
+				Distance = Input {
+					SourceOp = "AnimCurves1",
+					Source = "Value",
+				},
+				Angle = Input {
+					Expression = "iif(Direction_Xf.InvertTransform==0,0,180)",
+				},
+			},
+		},
+		AnimCurves1 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Curve = Input { Value = FuID { "Custom" } },
+				Lookup = Input {
+					SourceOp = "AnimCurves1Lookup1",
+					Source = "Value",
+				},
+				Scale = Input { Value = -0.125 },
+				Offset = Input { Value = 0.5 },
+			},
+		},
+		AnimCurves1Lookup1 = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0,
+						RH = { 0.375206146966965, 0 },
+					},
+					[0.5] = { 1,
+						LH = { 0.135489040198811, 1 },
+						RH = { 0.859163366218301, 1 },
+					},
+					[1] = { 0, LH = { 0.61409866586726, 0 } },
+				},
+			},
+			SplineColor = {
+				Red = 255,
+				Green = 255,
+				Blue = 255,
+			},
+			CtrlWZoom = false,
+		},
+		AnimCurves3 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Curve = Input { Value = FuID { "Custom" } },
+				Lookup = Input {
+					SourceOp = "AnimCurves3Lookup",
+					Source = "Value",
+				},
+				Scale = Input { Value = 0.25 },
+			},
+		},
+		AnimCurves3Lookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.37634327893574, 0 } },
+					[0.5] = { 1,
+						LH = { 0.132200577478299, 1 },
+						RH = { 0.879293675395264, 1 },
+					},
+					[1] = { 0,
+						LH = { 0.626453451041518, 0 },
+					},
+				},
+			},
+			SplineColor = {
+				Red = 255,
+				Green = 255,
+				Blue = 255,
+			},
+			CtrlWZoom = false,
+		},
+		AnimCurves_2 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Curve = Input { Value = FuID { "Custom" } },
+				Lookup = Input {
+					SourceOp = "AnimCurvesonDropZone2_MaskLookup",
+					Source = "Value",
+				},
+				Scale = Input { Value = 0.25 },
+			},
+		},
+		AnimCurvesonDropZone2_MaskLookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.37634327893574, 0 } },
+					[0.5] = { 1,
+						LH = { 0.132200577478299, 1 },
+						RH = { 0.879293675395264, 1 },
+					},
+					[1] = { 0,
+						LH = { 0.626453451041518, 0 },
+					},
+				},
+			},
+			SplineColor = {
+				Red = 255,
+				Green = 255,
+				Blue = 255,
+			},
+			CtrlWZoom = false,
+		},
+		Vector = Vector {
+			CtrlWZoom = false,
+			Inputs = {
+				Distance = Input {
+					SourceOp = "AnimCurves_1",
+					Source = "Value",
+				},
+				Angle = Input {
+					Expression = "iif(Direction_Xf.InvertTransform==0,0,180)",
+				},
+			},
+		},
+		AnimCurves_1 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Curve = Input { Value = FuID { "Custom" } },
+				Lookup = Input {
+					SourceOp = "AnimCurvesonVectoronDropZone2_MrgCenterLookup",
+					Source = "Value",
+				},
+				Scale = Input { Value = 0.125 },
+				Offset = Input { Value = 0.495 },
+			},
+		},
+		AnimCurvesonVectoronDropZone2_MrgCenterLookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0,
+						RH = { 0.375206146966965, 0 },
+					},
+					[0.5] = { 1,
+						LH = { 0.135489040198811, 1 },
+						RH = { 0.859163366218301, 1 },
+					},
+					[1] = { 0, LH = { 0.61409866586726, 0 } },
+				},
+			},
+			SplineColor = {
+				Red = 255,
+				Green = 255,
+				Blue = 255,
+			},
+			CtrlWZoom = false,
+		},
+		Vector2 = Vector {
+			CtrlWZoom = false,
+			Inputs = {
+				Distance = Input {
+					SourceOp = "AnimCurves2",
+					Source = "Value",
+				},
+			},
+		},
+		AnimCurves2 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Curve = Input { Value = FuID { "Custom" } },
+				Lookup = Input {
+					SourceOp = "AnimCurves2Lookup",
+					Source = "Value",
+				},
+				Scale = Input { Value = -1 },
+			},
+		},
+		AnimCurves2Lookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0,
+						RH = { 0.386522278108766, 0 },
+					},
+					[0.5] = { 0.5,
+						LH = { 0.130141446615923, 0.5 },
+						RH = { 0.875206146966965, 0.5 },
+					},
+					[1] = { 1,
+						LH = { 0.608751072284372, 1 },
+					},
+				},
+			},
+			SplineColor = {
+				Red = 255,
+				Green = 255,
+				Blue = 255,
+			},
+			CtrlWZoom = false,
+		},
+		Left = AudioDisplay {  },
+		Right = AudioDisplay { CtrlWZoom = false },
+		Left_1 = AudioDisplay { CtrlWZoom = false },
+		Right_1 = AudioDisplay { CtrlWZoom = false },
+	},
+}

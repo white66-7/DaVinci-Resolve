@@ -1,0 +1,236 @@
+{
+	Tools = ordered() {
+		RGB_Flash_V3 = MacroOperator {
+			CtrlWZoom = false,
+			NameSet = true,
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Transform2",
+					Source = "Input",
+					Name = "Background",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "Input",
+					Name = "Foreground",
+				},
+			},
+			Outputs = {
+				Output1 = InstanceOutput {
+					SourceOp = "ColorCorrector4",
+					Source = "Output",
+				},
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 310.583, 127.849 },
+				Flags = {
+					AllowPan = false,
+					GridSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true,
+				},
+				Size = { 498, 168.598, 255.333, 61.9548 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 0, 0 },
+			},
+			Tools = ordered() {
+				Merge1 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Transform4",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Screen" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 330, 130 } },
+				},
+				Merge2 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "ColorCorrector2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Transform3",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Screen" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 240, 90 } },
+				},
+				DirectionalBlur1 = DirectionalBlur {
+					Inputs = {
+						Type = Input { Value = 3, },
+						Length = Input {
+							Expression = "(0.6+0.4*sin(time/comp.RenderEnd*pi))*0.3",
+						},
+						Input = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 440, 130 } },
+				},
+				LensDistort1 = LensDistort {
+					Inputs = {
+						LensDistortionModel = Input { Value = 1, },
+						["DEClassicLDModel.Distortion"] = Input {
+							Expression = "(0.6+0.4*sin(time/comp.RenderEnd*pi))*0.3",
+						},
+						Input = Input {
+							SourceOp = "DirectionalBlur1",
+							Source = "Output",
+						},
+						CalibLineOrder = Input { Value = ScriptVal { }, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 550, 130 } },
+					Version = 1,
+				},
+				ColorCorrector4 = ColorCorrector {
+					CtrlWZoom = false,
+					Inputs = {
+						MasterRGBGain = Input { Expression = "1 + sin(time/comp.RenderEnd*pi)*0.6", },
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "LensDistort1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 660, 130 } },
+				},
+				Transform3 = Transform {
+					Inputs = {
+						Center = Input { Expression = "Point(0.5 + (0.6+0.4*sin(time/comp.RenderEnd*pi))*0.01, 0.5)", },
+						Size = Input { Expression = "1 + (0.6+0.4*sin(time/comp.RenderEnd*pi))*0.08", },
+						Input = Input {
+							SourceOp = "ColorCorrector1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 150, 40 } },
+				},
+				Transform4 = Transform {
+					Inputs = {
+						Center = Input { Expression = "Point(0.5 - (0.6+0.4*sin(time/comp.RenderEnd*pi))*0.01, 0.5)", },
+						Size = Input { Expression = "1 - (0.6+0.4*sin(time/comp.RenderEnd*pi))*0.08", },
+						Input = Input {
+							SourceOp = "ColorCorrector3",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 150, 180 } },
+				},
+				ColorCorrector1 = ColorCorrector {
+					Inputs = {
+						Channel = Input { Value = 3, },
+						MasterGreenGain = Input { Value = 0, },
+						MasterBlueGain = Input { Value = 0, },
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "DissolveR",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 40, 40 } },
+				},
+				ColorCorrector2 = ColorCorrector {
+					Inputs = {
+						Channel = Input { Value = 3, },
+						MasterRedGain = Input { Value = 0, },
+						MasterBlueGain = Input { Value = 0, },
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "DissolveG",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 40, 110 } },
+				},
+				ColorCorrector3 = ColorCorrector {
+					Inputs = {
+						Channel = Input { Value = 1, },
+						MasterRedGain = Input { Value = 0, },
+						MasterGreenGain = Input { Value = 0, },
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "DissolveB",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 40, 180 } },
+				},
+				DissolveR = Dissolve {
+					Transitions = {
+						[0] = "DFTDissolve"
+					},
+					Inputs = {
+						Mix = Input { Expression = "max(0, min(1, (time/comp.RenderEnd - 0.205) / 0.35))", },
+						Background = Input {
+							SourceOp = "Transform2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Transform1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -60, 40 } },
+				},
+				DissolveG = Dissolve {
+					Transitions = {
+						[0] = "DFTDissolve"
+					},
+					Inputs = {
+						Mix = Input { Expression = "max(0, min(1, (time/comp.RenderEnd - 0.325) / 0.35))", },
+						Background = Input {
+							SourceOp = "Transform2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Transform1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -60, 110 } },
+				},
+				DissolveB = Dissolve {
+					Transitions = {
+						[0] = "DFTDissolve"
+					},
+					Inputs = {
+						Mix = Input { Expression = "max(0, min(1, (time/comp.RenderEnd - 0.445) / 0.35))", },
+						Background = Input {
+							SourceOp = "Transform2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Transform1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -60, 180 } },
+				},
+				Transform2 = Transform {
+					Inputs = {
+						Size = Input { Expression = "1 + 2*time/comp.RenderEnd", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -170, 130 } },
+				},
+				Transform1 = Transform {
+					Inputs = {
+						Size = Input { Expression = "3 - 2*time/comp.RenderEnd", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -170, 70 } },
+				},
+			},
+		},
+	},
+}

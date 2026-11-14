@@ -1,0 +1,458 @@
+{
+	Tools = ordered() {
+		mJourney_Transition_01 = MacroOperator {
+			CtrlWZoom = false,
+			NameSet = true,
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Switch",
+					Source = "Background",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Media2_Offset",
+					Source = "Input",
+				},
+				Label1 = InstanceInput {
+					SourceOp = "CustomLabels",
+					Source = "Label1",
+					Page = "Controls",
+					Name = "转场控制",
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Media_Rotation",
+					Source = "InvertTransform",
+					Page = "Controls",
+					Name = "翻转方向",
+				},
+				Input4 = InstanceInput {
+					SourceOp = "AnimCurves3",
+					Source = "RotationControl",
+					Page = "Controls",
+					Default = 40,
+					Name = "模糊",
+				},
+				Input5 = InstanceInput {
+					SourceOp = "AnimCurves4",
+					Source = "Scale",
+					Default = 0.05,
+					Name = "色差",
+				},
+			},
+			Outputs = {
+				Output1 = InstanceOutput {
+					SourceOp = "CustomLabels",
+					Source = "Output",
+				},
+			},
+			ViewInfo = GroupInfo {
+				Pos = { -220, -16.5 },
+				Flags = {
+					Expanded = true,
+					AllowPan = false,
+					GridSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true,
+				},
+				Size = { 873.333, 99.3636, 338, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 220, 25.1364 },
+			},
+			Tools = ordered() {
+				Media2_Offset = Transform {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Angle = Input { Value = -180 },
+						InvertTransform = Input {
+							Expression = "Media_Rotation.InvertTransform",
+						},
+						Input = Input {
+							SourceOp = "MediaIn2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -495, -16.5 } },
+				},
+				Media_Zoom = Transform {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Size = Input {
+							SourceOp = "AnimCurves5",
+							Source = "Value",
+						},
+						Edges = Input { Value = 3 },
+						Input = Input {
+							SourceOp = "Switch",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -385, 16.5 } },
+					UserControls = ordered() {
+						InvertTransform = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							INPID_InputControl = "CheckboxControl",
+							INP_MaxScale = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							CBC_TriState = false,
+							LINKS_Name = "翻转方向",
+						},
+					},
+				},
+				Switch = Dissolve {
+					Transitions = { [0] = "DFTDissolve" },
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Mix = Input {
+							SourceOp = "AnimCurves1",
+							Source = "Value",
+						},
+						Background = Input {
+							SourceOp = "MediaIn1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Media2_Offset",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -385, -16.5 } },
+				},
+				Media_Rotation = Transform {
+					NameSet = true,
+					Inputs = {
+						Quality = Input { Value = 20 },
+						Angle = Input {
+							SourceOp = "AnimCurves2",
+							Source = "Value",
+						},
+						Edges = Input { Value = 3 },
+						Input = Input {
+							SourceOp = "Media_Zoom",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -275, 16.5 } },
+					UserControls = ordered() {
+						InvertTransform = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							INPID_InputControl = "CheckboxControl",
+							INP_MaxScale = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							CBC_TriState = false,
+							LINKS_Name = "翻转方向",
+						},
+					},
+				},
+				ChromaticAb1 = DirectionalBlur {
+					NameSet = true,
+					Inputs = {
+						ProcessGreen = Input { Value = 0 },
+						ProcessBlue = Input { Value = 0 },
+						ProcessAlpha = Input { Value = 0 },
+						Type = Input { Value = 3 },
+						Length = Input {
+							Value = 0.000122545453164615,
+							Expression = "ChromaticAberration",
+						},
+						Input = Input {
+							SourceOp = "Media_Rotation",
+							Source = "Output",
+						},
+						ChromaticAberration = Input {
+							SourceOp = "AnimCurves4",
+							Source = "Value",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -165, 16.5 } },
+					Colors = {
+						TileColor = {
+							R = 0.725490196078431,
+							G = 0.690196078431373,
+							B = 0.592156862745098,
+						},
+						TextColor = {
+							R = 0.725490196078431,
+							G = 0.690196078431373,
+							B = 0.592156862745098,
+						},
+					},
+					UserControls = ordered() {
+						ChromaticAberration = {
+							INP_MinScale = -0.1,
+							INP_Default = 0,
+							INPID_InputControl = "SliderControl",
+							LINKID_DataType = "Number",
+							IC_ControlPage = 0,
+							INP_MaxScale = 0.1,
+							LINKS_Name = "色差",
+						},
+					},
+				},
+				ChromaticAb2 = DirectionalBlur {
+					NameSet = true,
+					Inputs = {
+						Blend = Input { Expression = "ChromaticAb1.Blend" },
+						ProcessRed = Input { Value = 0 },
+						ProcessGreen = Input { Value = 0 },
+						ProcessAlpha = Input { Value = 0 },
+						Type = Input { Value = 3 },
+						Center = Input {
+							Expression = "ChromaticAb1.Center",
+						},
+						Length = Input {
+							Value = -0.000122545453164615,
+							Expression = "-ChromaticAb1.ChromaticAberration",
+						},
+						ClippingMode = Input {
+							Expression = "ChromaticAb1.ClippingMode",
+						},
+						Input = Input {
+							SourceOp = "ChromaticAb1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -55, 16.5 } },
+					Colors = {
+						TileColor = {
+							R = 0.725490196078431,
+							G = 0.690196078431373,
+							B = 0.592156862745098,
+						},
+						TextColor = {
+							R = 0.725490196078431,
+							G = 0.690196078431373,
+							B = 0.592156862745098,
+						},
+					},
+				},
+				Rotational_Blur = DirectionalBlur {
+					NameSet = true,
+					Inputs = {
+						Type = Input { Value = 1 },
+						Angle = Input {
+							SourceOp = "AnimCurves3",
+							Source = "Value",
+						},
+						Input = Input {
+							SourceOp = "ChromaticAb2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 55, 16.5 } },
+				},
+				CustomLabels = Dissolve {
+					Transitions = { [0] = "DFTDissolve" },
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Rotational_Blur",
+							Source = "Output",
+						},
+						Label1 = Input { Value = 1 },
+					},
+					ViewInfo = OperatorInfo { Pos = { 165, 16.5 } },
+					UserControls = ordered() {
+						Label1 = {
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							INPID_InputControl = "LabelControl",
+							LBLC_NumInputs = 3,
+							INP_External = false,
+							LINKID_DataType = "Number",
+							INP_Passive = true,
+							ICS_ControlPage = "Controls",
+							LINKS_Name = "转场控制",
+						},
+					},
+				},
+			},
+			UserControls = ordered() {
+				Label = {
+					LINKID_DataType = "Number",
+					INPID_InputControl = "ButtonControl",
+					INP_Integer = false,
+					LBLC_DropDownButton = false,
+					BTNCS_Execute = "os.execute('open \"\" \"https://www.motionvfx.com/dvr\"')\n os.execute('start \"\" \"https://www.motionvfx.com\"')\n",
+					INP_External = false,
+					INP_Passive = true,
+					IC_ControlPage = -1,
+					LINKS_Name = "mJourney by MotionVFX",
+				},
+			},
+		},
+		AnimCurves5 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Curve = Input { Value = FuID { "Custom" } },
+				Lookup = Input {
+					SourceOp = "AnimCurves5Lookup",
+					Source = "Value",
+				},
+				Mirror = Input { Value = 1 },
+				Scale = Input { Value = -0.1 },
+				Offset = Input { Value = 1 },
+				TimeScale = Input { Value = 1.05 },
+			},
+		},
+		AnimCurves5Lookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0,
+						RH = { 0.638112828693288, 0 },
+					},
+					[1] = { 1,
+						LH = { 0.356539577723824, 1 },
+					},
+				},
+			},
+			SplineColor = {
+				Red = 255,
+				Green = 255,
+				Blue = 255,
+			},
+			CtrlWZoom = false,
+		},
+		AnimCurves1 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Lookup = Input {
+					SourceOp = "AnimCurves1Lookup",
+					Source = "Value",
+				},
+				TimeScale = Input { Value = 10 },
+				TimeOffset = Input { Value = 0.41 },
+				Scale = Input { Value = 1 },
+			},
+		},
+		AnimCurves1Lookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0,
+						RH = { 0.333333333333333, 0.333333333333333 },
+						Flags = { Linear = true },
+					},
+					[1] = { 1,
+						LH = { 0.666666666666667, 0.666666666666667 },
+						Flags = { Linear = true },
+					},
+				},
+			},
+			SplineColor = {
+				Red = 255,
+				Green = 255,
+				Blue = 255,
+			},
+			CtrlWZoom = false,
+		},
+		AnimCurves2 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Curve = Input { Value = FuID { "Custom" } },
+				Lookup = Input {
+					SourceOp = "AnimCurvesonMedia1_RotationLookup1",
+					Source = "Value",
+				},
+				Scale = Input { Value = 180 },
+				TimeScale = Input { Value = 1.05 },
+			},
+		},
+		AnimCurvesonMedia1_RotationLookup1 = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0,
+						RH = { 0.830626197677244, 0 },
+					},
+					[1] = { 1,
+						LH = { 0.274614444033985, 1 },
+					},
+				},
+			},
+			SplineColor = {
+				Red = 255,
+				Green = 255,
+				Blue = 255,
+			},
+		},
+		AnimCurves4 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Curve = Input { Value = FuID { "Custom" } },
+				Lookup = Input {
+					SourceOp = "AnimCurves4Lookup",
+					Source = "Value",
+				},
+				Mirror = Input { Value = 1 },
+				Scale = Input { Value = 0.05 },
+				TimeScale = Input { Value = 1.05 },
+			},
+		},
+		AnimCurves4Lookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 1.09800587682163, 0 } },
+					[1] = { 1,
+						LH = { 0.666700005531311, 1 },
+					},
+				},
+			},
+			SplineColor = {
+				Red = 255,
+				Green = 255,
+				Blue = 255,
+			},
+		},
+		AnimCurves3 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Curve = Input { Value = FuID { "Custom" } },
+				Lookup = Input {
+					SourceOp = "AnimCurves3Lookup",
+					Source = "Value",
+				},
+				Mirror = Input { Value = 1 },
+				Scale = Input {
+					Value = 40,
+					Expression = "iif(Media_Rotation.InvertTransform==0,(RotationControl),((RotationControl)*-1))",
+				},
+				TimeScale = Input { Value = 1.1 },
+				RotationControl = Input { Value = 40 },
+			},
+			UserControls = ordered() {
+				RotationControl = {
+					LINKS_Name = "旋转控制",
+					LINKID_DataType = "Number",
+					INPID_InputControl = "ScrewControl",
+					INP_Integer = false,
+					ICS_ControlPage = "Controls",
+				},
+			},
+		},
+		AnimCurves3Lookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 1.15006504653443, 0 } },
+					[1] = { 1,
+						LH = { 0.663371843156519, 1 },
+					},
+				},
+			},
+			SplineColor = {
+				Red = 255,
+				Green = 255,
+				Blue = 255,
+			},
+		},
+	},
+}

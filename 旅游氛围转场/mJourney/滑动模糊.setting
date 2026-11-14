@@ -1,0 +1,254 @@
+{
+	Tools = ordered() {
+		mJourney_Transition_08 = MacroOperator {
+			CtrlWZoom = false,
+			NameSet = true,
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Media2_Pivot",
+					Source = "Input",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Media_Mrg",
+					Source = "Foreground",
+					Name = "输入",
+				},
+				Label1 = InstanceInput {
+					Name = "转场控制",
+					Source = "Label1",
+					SourceOp = "CustomLabels",
+					Page = "Controls",
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Direction_Anim",
+					Source = "InvertTransform",
+					Page = "Controls",
+					Name = "翻转方向",
+				},
+				Input4 = InstanceInput {
+					SourceOp = "AnimCurves3",
+					Source = "Scale",
+					Default = 0.05,
+					Name = "模糊",
+				},
+			},
+			Outputs = {
+				Output1 = InstanceOutput {
+					SourceOp = "CustomLabels",
+					Source = "Output",
+				},
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 825, 313.5 },
+				Flags = {
+					Expanded = true,
+					AllowPan = false,
+					GridSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true,
+				},
+				Size = { 395.29, 164.076, 106.752, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 0, 0 },
+			},
+			Tools = ordered() {
+				Media_Mrg = Merge {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Media2_Pivot",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "MediaIn1",
+							Source = "Output",
+						},
+						Operator = Input { Value = FuID { "Under" } },
+						ClampCoverage = Input { Value = 0 },
+						Edges = Input { Value = 1 },
+						PerformDepthMerge = Input { Value = 0 },
+					},
+					ViewInfo = OperatorInfo { Pos = { 110, 49.5 } },
+				},
+				Media2_Pivot = Transform {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Center = Input {
+							SourceOp = "Vector1",
+							Source = "Position",
+						},
+						Input = Input {
+							SourceOp = "MediaIn2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 49.5 } },
+				},
+				Direction_Anim = Transform {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Center = Input {
+							SourceOp = "Vector2",
+							Source = "Position",
+						},
+						Input = Input {
+							SourceOp = "Media_Mrg",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 110, 82.5 } },
+					UserControls = ordered() {
+						InvertTransform = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							INPID_InputControl = "CheckboxControl",
+							INP_MaxScale = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							CBC_TriState = false,
+							LINKS_Name = "翻转方向",
+						},
+					},
+				},
+				DirectionalBlur = DirectionalBlur {
+					NameSet = true,
+					Inputs = {
+						Length = Input {
+							SourceOp = "AnimCurves3",
+							Source = "Value",
+						},
+						Angle = Input {
+							Value = 90,
+							Expression = "iif(Direction_Anim.InvertTransform==0,90,-90)",
+						},
+						Input = Input {
+							SourceOp = "Direction_Anim",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 110, 115.5 } },
+				},
+				CustomLabels = Dissolve {
+					Transitions = { [0] = "DFTDissolve" },
+					NameSet = true,
+					Inputs = {
+						Background = Input {
+							SourceOp = "DirectionalBlur",
+							Source = "Output",
+						},
+						Label1 = Input { Value = 1 },
+					},
+					ViewInfo = OperatorInfo { Pos = { 220, 115.5 } },
+					UserControls = ordered() {
+						Label1 = {
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							INPID_InputControl = "LabelControl",
+							LBLC_NumInputs = 2,
+							INP_External = false,
+							LINKID_DataType = "Number",
+							INP_Passive = true,
+							ICS_ControlPage = "Controls",
+							LINKS_Name = "转场控制",
+						},
+					},
+				},
+			},
+			UserControls = ordered() {
+				Label = {
+					LINKID_DataType = "Number",
+					INPID_InputControl = "ButtonControl",
+					INP_Integer = false,
+					LBLC_DropDownButton = false,
+					BTNCS_Execute = "os.execute('open \"\" \"https://www.motionvfx.com/dvr\"')\n os.execute('start \"\" \"https://www.motionvfx.com\"')\n",
+					INP_External = false,
+					INP_Passive = true,
+					IC_ControlPage = -1,
+					LINKS_Name = "mJourney by MotionVFX",
+				},
+			},
+		},
+		Vector1 = Vector {
+			CtrlWZoom = false,
+			Inputs = {
+				Distance = Input { Value = 1.125 },
+				Angle = Input {
+					Value = 90,
+					Expression = "iif(Direction_Anim.InvertTransform==1,-90,90)",
+				},
+			},
+		},
+		Vector2 = Vector {
+			CtrlWZoom = false,
+			Inputs = {
+				Distance = Input {
+					SourceOp = "AnimCurves1",
+					Source = "Value",
+				},
+				Angle = Input { Value = -90 },
+			},
+		},
+		AnimCurves1 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Curve = Input { Value = FuID { "Custom" } },
+				Lookup = Input {
+					SourceOp = "AnimCurves1Lookup",
+					Source = "Value",
+				},
+				Scale = Input { Value = 1.125 },
+			},
+		},
+		AnimCurves1Lookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.83848017498691, 0 } },
+					[1] = { 1,
+						LH = { 0.121197325595569, 1 },
+					},
+				},
+			},
+			SplineColor = {
+				Red = 255,
+				Green = 255,
+				Blue = 255,
+			},
+			CtrlWZoom = false,
+		},
+		AnimCurves3 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Curve = Input { Value = FuID { "Custom" } },
+				Lookup = Input {
+					SourceOp = "AnimCurves3Lookup1",
+					Source = "Value",
+				},
+				Mirror = Input { Value = 1 },
+				Scale = Input { Value = 0.05 },
+				TimeScale = Input { Value = 1.05 },
+			},
+		},
+		AnimCurves3Lookup1 = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 1.0659203153243, 0 } },
+					[1] = { 1,
+						LH = { 0.773651877189065, 1 },
+					},
+				},
+			},
+			SplineColor = {
+				Red = 255,
+				Green = 255,
+				Blue = 255,
+			},
+		},
+	},
+}

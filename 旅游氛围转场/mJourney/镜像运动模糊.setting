@@ -1,0 +1,572 @@
+{
+	Tools = ordered() {
+		mJourney_Transition_07 = MacroOperator {
+			CtrlWZoom = false,
+			NameSet = true,
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Media2_Pivot",
+					Source = "Input",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Media1_Pivot",
+					Source = "Input",
+				},
+				Label1 = InstanceInput {
+					Name = "转场控制",
+					Source = "Label1",
+					SourceOp = "CustomLabels",
+					Page = "Controls",
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Button",
+					Source = "FlipDirection",
+					Page = "Controls",
+					Name = "翻转方向",
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Media1_Mirror",
+					Source = "MotionBlur",
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Media1_Mirror",
+					Source = "Quality",
+					Default = 6,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Media1_Mirror",
+					Source = "ShutterAngle",
+					Default = 90,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Media1_Mirror",
+					Source = "CenterBias",
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Media1_Mirror",
+					Source = "SampleSpread",
+					Default = 1,
+				},
+			},
+			Outputs = {
+				Output1 = InstanceOutput {
+					SourceOp = "CustomLabels",
+					Source = "Output",
+				},
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 935, 247.5 },
+				Flags = {
+					Expanded = true,
+					AllowPan = false,
+					GridSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true,
+				},
+				Size = { 639.271, 198.364, 278.969, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { -939.031, -238.864 },
+			},
+			Tools = ordered() {
+				Media_Mask = RectangleMask {
+					CtrlWShown = false,
+					NameSet = true,
+					SourceOp = "Mirror1_Mask",
+					Inputs = {
+						EffectMask = Input {  },
+						SettingsNest = Input {  },
+						SoftEdge = Input {  },
+						["ShapeRasterizer.Nest"] = Input {  },
+						CommentsNest = Input {  },
+						FrameRenderScriptNest = Input {  },
+						StartRenderScripts = Input {  },
+						EndRenderScripts = Input {  },
+						GlobalIn = Input { Value = -9999 },
+						GlobalOut = Input { Value = 99999 },
+					},
+					ViewInfo = OperatorInfo { Pos = { 715, 313.5 } },
+					ExtentSet = true,
+				},
+				Mirror1_Mask = RectangleMask {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" } },
+						SoftEdge = Input {
+							SourceOp = "AnimCurves3",
+							Source = "Value",
+						},
+						MaskWidth = Input { Value = 1920 },
+						MaskHeight = Input { Value = 1080 },
+						PixelAspect = Input { Value = { 1, 1 } },
+						UseFrameFormatSettings = Input { Value = 1 },
+						ClippingMode = Input { Value = FuID { "None" } },
+						Center = Input {
+							SourceOp = "Vector4",
+							Source = "Position",
+						},
+						Width = Input {
+							SourceOp = "AnimCurves1",
+							Source = "Value",
+						},
+						Height = Input { Value = 1.3 },
+						GlobalIn = Input { Value = -9999 },
+						GlobalOut = Input { Value = 99999 },
+					},
+					ViewInfo = OperatorInfo { Pos = { 935, 247.5 } },
+					ExtentSet = true,
+				},
+				Media1_Pivot = Transform {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Input = Input {
+							SourceOp = "MediaIn1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 825, 247.5 } },
+				},
+				Media_Mrg = Merge {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Media_Mask",
+							Source = "Mask",
+						},
+						Background = Input {
+							SourceOp = "Media2_Pivot",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Media1_Pivot",
+							Source = "Output",
+						},
+						Operator = Input { Value = FuID { "Under" } },
+						ClampCoverage = Input { Value = 0 },
+						PerformDepthMerge = Input { Value = 0 },
+					},
+					ViewInfo = OperatorInfo { Pos = { 825, 313.5 } },
+				},
+				Mirror2_Mask = RectangleMask {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" } },
+						SoftEdge = Input { Value = 0.01 },
+						MaskWidth = Input { Value = 1920 },
+						MaskHeight = Input { Value = 1080 },
+						PixelAspect = Input { Value = { 1, 1 } },
+						UseFrameFormatSettings = Input { Value = 1 },
+						ClippingMode = Input { Value = FuID { "None" } },
+						Center = Input {
+							SourceOp = "Vector_2",
+							Source = "Position",
+						},
+						Width = Input { Value = 1 },
+						Height = Input { Value = 1.3 },
+						GlobalIn = Input { Value = -9999 },
+						GlobalOut = Input { Value = 99999 },
+					},
+					ViewInfo = OperatorInfo { Pos = { 935, 379.5 } },
+					ExtentSet = true,
+				},
+				Media2_Pivot = Transform {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Input = Input {
+							SourceOp = "MediaIn2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 825, 379.5 } },
+				},
+				Media1_Mirror = Transform {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Mirror1_Mask",
+							Source = "Mask",
+						},
+						MotionBlur = Input { Value = 1 },
+						Quality = Input { Value = 6 },
+						ShutterAngle = Input { Value = 90 },
+						Center = Input {
+							SourceOp = "Vector3",
+							Source = "Position",
+						},
+						FlipHoriz = Input { Value = 1 },
+						Input = Input {
+							SourceOp = "Media1_Pivot",
+							Source = "Output",
+						},
+						CommentsNest = Input { Value = 0 },
+						FrameRenderScriptNest = Input { Value = 0 },
+					},
+					ViewInfo = OperatorInfo { Pos = { 935, 280.5 } },
+				},
+				Media2_Mirror = Transform {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Mirror2_Mask",
+							Source = "Mask",
+						},
+						MotionBlur = Input {
+							Value = 1,
+							Expression = "Media1_Mirror.MotionBlur",
+						},
+						Quality = Input { Value = 6 },
+						ShutterAngle = Input { Value = 90 },
+						Center = Input {
+							SourceOp = "Vector_1",
+							Source = "Position",
+						},
+						FlipHoriz = Input { Value = 1 },
+						Input = Input {
+							SourceOp = "Media2_Pivot",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 935, 346.5 } },
+				},
+				Mirror_Mrg = Merge {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Media2_Mirror",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Media1_Mirror",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0 },
+					},
+					ViewInfo = OperatorInfo { Pos = { 935, 313.5 } },
+				},
+				Media_Mirror_Mrg = Merge {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						MultiplyByMask = Input { Value = 1 },
+						Background = Input {
+							SourceOp = "Media_Mrg",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Mirror_Mrg",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0 },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1045, 313.5 } },
+				},
+				Button = AlphaMultiply {
+					NameSet = true,
+					Inputs = {
+						Input = Input {
+							SourceOp = "Media_Mirror_Mrg",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1155, 313.5 } },
+					UserControls = ordered() {
+						FlipDirection = {
+							CBC_TriState = false,
+							INP_Integer = false,
+							LINKID_DataType = "Number",
+							INPID_InputControl = "CheckboxControl",
+							LINKS_Name = "翻转方向",
+						},
+					},
+				},
+				CustomLabels = Dissolve {
+					Transitions = { [0] = "DFTDissolve" },
+					NameSet = true,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Button",
+							Source = "Output",
+						},
+						Label1 = Input { Value = 1 },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1265, 313.5 } },
+					UserControls = ordered() {
+						Label1 = {
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							INPID_InputControl = "LabelControl",
+							LBLC_NumInputs = 6,
+							INP_External = false,
+							LINKID_DataType = "Number",
+							INP_Passive = true,
+							ICS_ControlPage = "Controls",
+							LINKS_Name = "转场控制",
+						},
+					},
+				},
+			},
+			UserControls = ordered() {
+				Label = {
+					LINKID_DataType = "Number",
+					INPID_InputControl = "ButtonControl",
+					INP_Integer = false,
+					LBLC_DropDownButton = false,
+					BTNCS_Execute = "os.execute('open \"\" \"https://www.motionvfx.com/dvr\"')\n os.execute('start \"\" \"https://www.motionvfx.com\"')\n",
+					INP_External = false,
+					INP_Passive = true,
+					IC_ControlPage = -1,
+					LINKS_Name = "mJourney by MotionVFX",
+				},
+			},
+		},
+		Vector4 = Vector {
+			CtrlWZoom = false,
+			Inputs = {
+				Distance = Input {
+					SourceOp = "AnimCurves4",
+					Source = "Value",
+				},
+				Angle = Input {
+					Expression = "iif(Button.FlipDirection==0,0,180)",
+				},
+			},
+		},
+		AnimCurves4 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Curve = Input { Value = FuID { "Custom" } },
+				Lookup = Input {
+					SourceOp = "AnimCurvesonVectoronMirror1_MaskCenterLookup",
+					Source = "Value",
+				},
+				Scale = Input { Value = -1 },
+				Offset = Input { Value = 1 },
+				TimeScale = Input { Value = 1.25 },
+			},
+		},
+		AnimCurvesonVectoronMirror1_MaskCenterLookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0,
+						RH = { 0.333299994468689, 0 },
+					},
+					[1] = { 1,
+						LH = { 0.666700005531311, 1 },
+					},
+				},
+			},
+			SplineColor = {
+				Red = 255,
+				Green = 255,
+				Blue = 255,
+			},
+			CtrlWZoom = false,
+		},
+		AnimCurves1 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Lookup = Input {
+					SourceOp = "AnimCurves1Lookup",
+					Source = "Value",
+				},
+				Scale = Input { Value = 0.05 },
+				Offset = Input { Value = 1 },
+				TimeScale = Input { Value = 6 },
+				TimeOffset = Input { Value = 0.6 },
+			},
+		},
+		AnimCurves1Lookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0,
+						RH = { 0.333333333333333, 0.333333333333333 },
+						Flags = { Linear = true },
+					},
+					[1] = { 1,
+						LH = { 0.666666666666667, 0.666666666666667 },
+						Flags = { Linear = true },
+					},
+				},
+			},
+			SplineColor = {
+				Red = 255,
+				Green = 255,
+				Blue = 255,
+			},
+			CtrlWZoom = false,
+		},
+		AnimCurves3 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Lookup = Input {
+					SourceOp = "AnimCurves3Lookup",
+					Source = "Value",
+				},
+				Scale = Input { Value = 0.01 },
+				TimeScale = Input { Value = 6 },
+			},
+		},
+		AnimCurves3Lookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0,
+						RH = { 0.333333333333333, 0.333333333333333 },
+						Flags = { Linear = true },
+					},
+					[1] = { 1,
+						LH = { 0.666666666666667, 0.666666666666667 },
+						Flags = { Linear = true },
+					},
+				},
+			},
+			SplineColor = {
+				Red = 255,
+				Green = 255,
+				Blue = 255,
+			},
+			CtrlWZoom = false,
+		},
+		Vector_2 = Vector {
+			CtrlWZoom = false,
+			Inputs = {
+				Distance = Input {
+					SourceOp = "AnimCurves_2",
+					Source = "Value",
+				},
+				Angle = Input {
+					Expression = "iif(Button.FlipDirection==0,0,180)",
+				},
+			},
+		},
+		AnimCurves_2 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Curve = Input { Value = FuID { "Custom" } },
+				Lookup = Input {
+					SourceOp = "AnimCurvesonVectoronMirror2_MaskCenterLookup",
+					Source = "Value",
+				},
+				Scale = Input { Value = -1 },
+				TimeScale = Input { Value = 1.3 },
+				TimeOffset = Input { Value = 0.2 },
+			},
+		},
+		AnimCurvesonVectoronMirror2_MaskCenterLookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0,
+						RH = { 0.333299994468689, 0 },
+					},
+					[1] = { 1,
+						LH = { 0.666700005531311, 1 },
+					},
+				},
+			},
+			SplineColor = {
+				Red = 255,
+				Green = 255,
+				Blue = 255,
+			},
+			CtrlWZoom = false,
+		},
+		Vector3 = Vector {
+			CtrlWZoom = false,
+			Inputs = {
+				Distance = Input {
+					SourceOp = "AnimCurves2",
+					Source = "Value",
+				},
+				Angle = Input {
+					Expression = "iif(Button.FlipDirection==0,0,180)",
+				},
+			},
+		},
+		AnimCurves2 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Curve = Input { Value = FuID { "Custom" } },
+				Lookup = Input {
+					SourceOp = "AnimCurves2Lookup",
+					Source = "Value",
+				},
+				Scale = Input { Value = -2 },
+				Offset = Input { Value = 1 },
+				TimeScale = Input { Value = 1.25 },
+			},
+		},
+		AnimCurves2Lookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0,
+						RH = { 0.333299994468689, 0 },
+					},
+					[1] = { 1,
+						LH = { 0.666700005531311, 1 },
+					},
+				},
+			},
+			SplineColor = {
+				Red = 255,
+				Green = 255,
+				Blue = 255,
+			},
+			CtrlWZoom = false,
+		},
+		Vector_1 = Vector {
+			CtrlWZoom = false,
+			Inputs = {
+				Distance = Input {
+					SourceOp = "AnimCurves_1",
+					Source = "Value",
+				},
+				Angle = Input {
+					Expression = "iif(Button.FlipDirection==0,0,180)",
+				},
+			},
+		},
+		AnimCurves_1 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Curve = Input { Value = FuID { "Custom" } },
+				Lookup = Input {
+					SourceOp = "AnimCurvesonVectoronMedia2_MirrorCenterLookup",
+					Source = "Value",
+				},
+				Scale = Input { Value = -2 },
+				Offset = Input { Value = 1 },
+				ClipHigh = Input { Value = 1 },
+				TimeScale = Input { Value = 1.3 },
+				TimeOffset = Input { Value = 0.2 },
+			},
+		},
+		AnimCurvesonVectoronMedia2_MirrorCenterLookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0,
+						RH = { 0.333299994468689, 0 },
+					},
+					[1] = { 1,
+						LH = { 0.666700005531311, 1 },
+					},
+				},
+			},
+			SplineColor = {
+				Red = 255,
+				Green = 255,
+				Blue = 255,
+			},
+			CtrlWZoom = false,
+		},
+	},
+}

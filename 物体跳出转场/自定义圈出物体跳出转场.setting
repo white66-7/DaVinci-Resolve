@@ -1,0 +1,2231 @@
+{
+	Tools = ordered() {
+		ObjectTransitions = MacroOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				InputMB1 = InstanceInput {
+					SourceOp = "LL",
+					Source = "btnMBON",
+					Width = 0.490000009536743,
+				},
+				InputMB2 = InstanceInput {
+					SourceOp = "LL",
+					Source = "btnMBOFF",
+					Width = 0.490000009536743,
+				},
+				InputBlnk3 = InstanceInput {
+					SourceOp = "LL",
+					Source = "Blank",
+				},
+				InputTut = InstanceInput {
+					SourceOp = "LL",
+					Source = "Tutorial",
+				},
+				InputBlnk1 = InstanceInput {
+					SourceOp = "LL",
+					Source = "Blank",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "LL",
+					Source = "Pointer",
+					Name = "编辑模式",
+				},
+				Input6 = InstanceInput {
+					SourceOp = "LL",
+					Source = "btnEditM1",
+					Width = 0.330000013113022,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "LL",
+					Source = "btnEditM2",
+					Width = 0.330000013113022,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "LL",
+					Source = "btnEditM3",
+					Width = 0.330000013113022,
+				},
+				InputResetM1 = InstanceInput {
+					SourceOp = "m1",
+					Source = "Reset",
+					Width = 0.33,
+				},
+				InputResetM2 = InstanceInput {
+					SourceOp = "m2",
+					Source = "Reset",
+					Width = 0.33,
+				},
+				InputResetM3 = InstanceInput {
+					SourceOp = "m3",
+					Source = "Reset",
+					Width = 0.33,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "LL",
+					Source = "btnMask1",
+					Width = 0.330000013113022,
+					Default = 0,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "LL",
+					Source = "btnMask2",
+					Width = 0.330000013113022,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "LL",
+					Source = "btnMask3",
+					Width = 0.330000013113022,
+					Default = 0,
+				},
+				InputBlnk2 = InstanceInput {
+					SourceOp = "LL",
+					Source = "Blank",
+				},
+				InputMasksLabel = InstanceInput {
+					SourceOp = "LL",
+					Source = "MasksControls",
+				},
+				InputM1Label = InstanceInput {
+					SourceOp = "LL",
+					Source = "M1Controls",
+				},
+				Input53 = InstanceInput {
+					SourceOp = "m1",
+					Source = "Polyline",
+					Name = "遮罩 1",
+					Default = 0,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "xfMove1",
+					Source = "btnL",
+					Width = 0.25,
+				},
+				Input31 = InstanceInput {
+					SourceOp = "xfMove1",
+					Source = "btnU",
+					Width = 0.25,
+				},
+				Input32 = InstanceInput {
+					SourceOp = "xfMove1",
+					Source = "btnD",
+					Width = 0.25,
+				},
+				Input33 = InstanceInput {
+					SourceOp = "xfMove1",
+					Source = "btnR",
+					Width = 0.25,
+				},
+				InputSoftE1 = InstanceInput {
+					SourceOp = "m1",
+					Source = "SoftEdge",
+				},
+				InputBord1 = InstanceInput {
+					SourceOp = "m1",
+					Source = "BorderWidth",
+				},
+				Input29 = InstanceInput {
+					SourceOp = "xfMove1",
+					Source = "Pivot",
+					Name = "遮罩 1 轴心",
+				},
+				Input34 = InstanceInput {
+					SourceOp = "acPohyb1",
+					Source = "Scale",
+					Name = "遮罩 1 距离",
+					MinScale = 0,
+					Default = 1,
+				},
+				Input35 = InstanceInput {
+					SourceOp = "acVelkost1",
+					Source = "Offset",
+					Name = "遮罩 1 起始大小",
+					MinScale = 0,
+					MaxScale = 1,
+					Default = 1,
+				},
+				Input36 = InstanceInput {
+					SourceOp = "acUhol1",
+					Source = "Scale",
+					Name = "遮罩 1 角度",
+					MinScale = -360,
+					MaxScale = 360,
+					Default = 0,
+				},
+				InputSep1 = InstanceInput {
+					SourceOp = "LL",
+					Source = "Separator",
+				},
+				InputM2Label = InstanceInput {
+					SourceOp = "LL",
+					Source = "M2Controls",
+				},
+				Input54 = InstanceInput {
+					SourceOp = "m2",
+					Source = "Polyline",
+					Name = "遮罩 2",
+					Default = 0,
+				},
+				Input38 = InstanceInput {
+					SourceOp = "xfMove2",
+					Source = "btnL",
+					Width = 0.25,
+				},
+				Input39 = InstanceInput {
+					SourceOp = "xfMove2",
+					Source = "btnU",
+					Width = 0.25,
+				},
+				Input40 = InstanceInput {
+					SourceOp = "xfMove2",
+					Source = "btnD",
+					Width = 0.25,
+				},
+				Input41 = InstanceInput {
+					SourceOp = "xfMove2",
+					Source = "btnR",
+					Width = 0.25,
+				},
+				InputSoftE2 = InstanceInput {
+					SourceOp = "m2",
+					Source = "SoftEdge",
+				},
+				InputBord2 = InstanceInput {
+					SourceOp = "m2",
+					Source = "BorderWidth",
+				},
+				Input37 = InstanceInput {
+					SourceOp = "xfMove2",
+					Source = "Pivot",
+					Name = "遮罩 2 轴心",
+				},
+				Input42 = InstanceInput {
+					SourceOp = "acPohyb2",
+					Source = "Scale",
+					Name = "遮罩 2 距离",
+					MinScale = 0,
+					Default = 1,
+				},
+				Input43 = InstanceInput {
+					SourceOp = "acVelkost2",
+					Source = "Offset",
+					Name = "遮罩 2 起始大小",
+					MinScale = 0,
+					MaxScale = 1,
+					Default = 1,
+				},
+				Input44 = InstanceInput {
+					SourceOp = "acUhol2",
+					Source = "Scale",
+					Name = "遮罩 2 角度",
+					MinScale = -360,
+					MaxScale = 360,
+					Default = 0,
+				},
+				InputSep2 = InstanceInput {
+					SourceOp = "LL",
+					Source = "Separator",
+				},
+				InputM3Label = InstanceInput {
+					SourceOp = "LL",
+					Source = "M3Controls",
+				},
+				Input55 = InstanceInput {
+					SourceOp = "m3",
+					Source = "Polyline",
+					Name = "遮罩 3",
+					Default = 0,
+				},
+				Input46 = InstanceInput {
+					SourceOp = "xfMove3",
+					Source = "btnL",
+					Width = 0.25,
+				},
+				Input47 = InstanceInput {
+					SourceOp = "xfMove3",
+					Source = "btnU",
+					Width = 0.25,
+				},
+				Input48 = InstanceInput {
+					SourceOp = "xfMove3",
+					Source = "btnD",
+					Width = 0.25,
+				},
+				Input49 = InstanceInput {
+					SourceOp = "xfMove3",
+					Source = "btnR",
+					Width = 0.25,
+				},
+				InputSoftE3 = InstanceInput {
+					SourceOp = "m3",
+					Source = "SoftEdge",
+				},
+				InputBord3 = InstanceInput {
+					SourceOp = "m3",
+					Source = "BorderWidth",
+				},
+				Input45 = InstanceInput {
+					SourceOp = "xfMove3",
+					Source = "Pivot",
+					Name = "遮罩 3 轴心",
+				},
+				Input50 = InstanceInput {
+					SourceOp = "acPohyb3",
+					Source = "Scale",
+					Name = "遮罩 3 距离",
+					MinScale = 0,
+					Default = 1,
+				},
+				Input51 = InstanceInput {
+					SourceOp = "acVelkost3",
+					Source = "Offset",
+					Name = "遮罩 3 起始大小",
+					MinScale = 0,
+					MaxScale = 1,
+					Default = 1,
+				},
+				Input52 = InstanceInput {
+					SourceOp = "acUhol3",
+					Source = "Scale",
+					Name = "遮罩 3 角度",
+					MinScale = -360,
+					MaxScale = 360,
+					Default = 0,
+				},
+				InputBGLabel = InstanceInput {
+					SourceOp = "LL",
+					Source = "BGControls",
+				},
+				Input17 = InstanceInput {
+					SourceOp = "acA2",
+					Source = "TimeOffset",
+					MinScale = -0.4,
+					MaxScale = 0.4,
+					Default = 0,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "xfMove0",
+					Source = "btnL",
+					Width = 0.159999996423721,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "xfMove0",
+					Source = "btnU",
+					Width = 0.159999996423721,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "xfMove0",
+					Source = "btnD",
+					Width = 0.159999996423721,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "xfMove0",
+					Source = "btnR",
+					Width = 0.159999996423721,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "xfMove0",
+					Source = "btnH",
+					Width = 0.170000001788139,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "xfMove0",
+					Source = "btnV",
+					Width = 0.180000007152557,
+				},
+				InputBGTyp1 = InstanceInput {
+					SourceOp = "LL",
+					Source = "BG1Controls",
+				},
+				Input18 = InstanceInput {
+					SourceOp = "xfMove0",
+					Source = "Pivot",
+					Name = "背景轴心",
+				},
+				Input26 = InstanceInput {
+					SourceOp = "acPohyb0",
+					Source = "Scale",
+					Name = "背景距离",
+					MinScale = 0,
+					Default = 1,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "acVelkost0",
+					Source = "Offset",
+					Name = "背景起始大小",
+					MinScale = 0,
+					MaxScale = 1,
+					Default = 1,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "acUhol0",
+					Source = "Scale",
+					Name = "背景角度",
+					MinScale = -360,
+					MaxScale = 360,
+					Default = 0,
+				},
+				InputBGTyp2 = InstanceInput {
+					SourceOp = "LL",
+					Source = "BG2Controls",
+				},
+				Input56 = InstanceInput {
+					SourceOp = "Publish1",
+					Source = "Value",
+					Name = "分离背景位置",
+				},
+				InputShakeLabel = InstanceInput {
+					SourceOp = "LL",
+					Source = "ShakeControls",
+				},
+				Input57 = InstanceInput {
+					SourceOp = "camShake",
+					Source = "XDeviation",
+					Default = 0.2,
+				},
+				Input58 = InstanceInput {
+					SourceOp = "camShake",
+					Source = "YDeviation",
+					Default = 0.2,
+				},
+				Input59 = InstanceInput {
+					SourceOp = "camShake",
+					Source = "RotationDeviation",
+					Default = 0.591,
+				},
+				Input60 = InstanceInput {
+					SourceOp = "camShake",
+					Source = "Randomness",
+					Default = 0.614,
+				},
+				Input61 = InstanceInput {
+					SourceOp = "camShake",
+					Source = "Speed",
+					Default = 0.8,
+				},
+				Input62 = InstanceInput {
+					SourceOp = "camShake",
+					Source = "FrequencyMethod",
+					Default = 0,
+				},
+				Input63 = InstanceInput {
+					SourceOp = "camShake",
+					Source = "Edges",
+					Default = 3,
+				},
+				Input64 = InstanceInput {
+					SourceOp = "camShake",
+					Source = "InvertTransform",
+				},
+				InputFlashLabel = InstanceInput {
+					SourceOp = "LL",
+					Source = "FlashControls",
+				},
+				Input65 = InstanceInput {
+					SourceOp = "AnimCurves5",
+					Source = "Scale",
+					Name = "闪光强度",
+					MinScale = 0,
+					MaxScale = 5,
+					Default = 2,
+				},
+				InputFlashM1 = InstanceInput {
+					SourceOp = "Rectangle2",
+					Source = "Width",
+					Name = "遮罩宽度",
+					MaxScale = 4,
+					Default = 0.36,
+				},
+				InputFlashM2 = InstanceInput {
+					SourceOp = "Rectangle2",
+					Source = "Height",
+					Name = "遮罩高度",
+					MaxScale = 4,
+					Default = 4,
+				},
+				Input1 = InstanceInput {
+					SourceOp = "LL",
+					Source = "MyPortfolio",
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "mg0",
+					Source = "Background",
+				},
+				MainInput2 = InstanceInput {
+					SourceOp = "TS",
+					Source = "Input",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "pointPOS",
+					Source = "Output",
+				},
+				Output1 = InstanceOutput {
+					SourceOp = "Publish1",
+					Source = "Value",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 220, 148.5 },
+				Flags = {
+					AllowPan = false,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 1437.94, 460.773, 718.969, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 0, 0 }
+			},
+			Tools = ordered() {
+				LL = AlphaDivide {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						A1 = Input {
+							SourceOp = "acA1",
+							Source = "Value",
+						},
+						A2 = Input {
+							SourceOp = "acA2",
+							Source = "Value",
+						},
+						M1Controls = Input { Value = 1, },
+						M2Controls = Input { Value = 1, },
+						M3Controls = Input { Value = 1, },
+						BG2Controls = Input { Value = 1, },
+						Tutorial = Input { Value = "- Fusion 叠层 开\n- 编辑模式 开\n- 点击 \"编辑遮罩 1\" -> 绘制遮罩 1\n- (可选) \"编辑遮罩 2\" -> 绘制遮罩 2\n- (可选) \"编辑遮罩 3\" -> 绘制遮罩 3\n- 编辑模式 关", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 217.508, 8.43235 } },
+					UserControls = ordered() {
+						MyPortfolio = {
+							INP_Integer = false,
+							INP_External = false,
+							LINKID_DataType = "Number",
+							BTNCS_Execute = "                    		os.execute('open \"\" \"https://elements.envato.com/user/LLmotiongraphics\"')\n                    		os.execute('start \"\" \"https://elements.envato.com/user/LLmotiongraphics\"')\n                    		",
+							INP_Passive = true,
+							INPID_InputControl = "ButtonControl",
+							LINKS_Name = "由 LLmotion 制作，点击访问我的作品集！",
+						},
+						A1 = { INP_Integer = false, LINKID_DataType = "Number", INPID_InputControl = "SliderControl", INP_SplineType = "Default", LINKS_Name = "动画 1", },
+						A2 = { INP_Integer = false, LINKID_DataType = "Number", INPID_InputControl = "SliderControl", INP_SplineType = "Default", LINKS_Name = "动画 2", },
+						Pointer = { CBC_TriState = false, INP_Integer = false, LINKID_DataType = "Number", INPID_InputControl = "CheckboxControl", INP_SplineType = "Default", LINKS_Name = "指针", },
+						btnMask1 = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							INPID_InputControl = "ButtonControl",
+							BTNCS_Execute = "-- @LLmotion.  One Mask ✅ ❌ \nlocal node = comp:FindTool(\"LL\")\nlocal node2 = comp:FindTool(\"mg2\")\nlocal node3 = comp:FindTool(\"mg3\") --zmeni nazov tlacidla v UI\nif node then\n    	node.btnMask1:SetAttrs({INPS_Name = \"✅ 单个遮罩\"})\n		node.btnMask2:SetAttrs({INPS_Name = \"❌ 双遮罩\"})\n		node.btnMask3:SetAttrs({INPS_Name = \"❌ 三遮罩\"})\n		node2:SetAttrs({TOOLB_PassThrough = true})\n		node3:SetAttrs({TOOLB_PassThrough = true})\n		node.M1Controls = 1\n		node.M2Controls = 0\n		node.M3Controls = 0\nend",
+							INP_MaxScale = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							ICD_Width = 0.330000013113022,
+							INP_SplineType = "Default",
+							LINKS_Name = "❌ 单个遮罩",
+						},
+						btnMask2 = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							INPID_InputControl = "ButtonControl",
+							BTNCS_Execute = "-- @LLmotion.  Two Masks ✅ ❌ \nlocal node = comp:FindTool(\"LL\")\nlocal node2 = comp:FindTool(\"mg2\")\nlocal node3 = comp:FindTool(\"mg3\") --zmeni nazov tlacidla v UI\nif node then\n    	node.btnMask1:SetAttrs({INPS_Name = \"❌ 单个遮罩\"})\n		node.btnMask2:SetAttrs({INPS_Name = \"✅ 双遮罩\"})\n		node.btnMask3:SetAttrs({INPS_Name = \"❌ 三遮罩\"})\n		node2:SetAttrs({TOOLB_PassThrough = false})\n		node3:SetAttrs({TOOLB_PassThrough = true})\n		node.M1Controls = 1\n		node.M2Controls = 1\n		node.M3Controls = 0\nend",
+							INP_MaxScale = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							ICD_Width = 0.330000013113022,
+							INP_SplineType = "Default",
+							LINKS_Name = "❌ 双遮罩",
+						},
+						btnMask3 = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							INPID_InputControl = "ButtonControl",
+							BTNCS_Execute = "-- @LLmotion.  3 Masks ✅ ❌ \nlocal node = comp:FindTool(\"LL\")\nlocal node2 = comp:FindTool(\"mg2\")\nlocal node3 = comp:FindTool(\"mg3\") --zmeni nazov tlacidla v UI\nif node then\n    	node.btnMask1:SetAttrs({INPS_Name = \"❌ 单个遮罩\"})\n		node.btnMask2:SetAttrs({INPS_Name = \"❌ 双遮罩\"})\n		node.btnMask3:SetAttrs({INPS_Name = \"✅ 三遮罩\"})\n		node2:SetAttrs({TOOLB_PassThrough = false})\n		node3:SetAttrs({TOOLB_PassThrough = false})\n		node.M1Controls = 1\n		node.M2Controls = 1\n		node.M3Controls = 1\nend",
+							INP_MaxScale = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							ICD_Width = 0.330000013113022,
+							INP_SplineType = "Default",
+							LINKS_Name = "✅ 三遮罩",
+						},
+						btnEditM1 = { ICD_Width = 0.330000013113022, INP_Integer = false, LINKID_DataType = "Number", BTNCS_Execute = "comp:FindTool(\"m1\").ShowViewControls = 1\nm2.ShowViewControls = 0\nm3.ShowViewControls = 0\nDiss2.Mix = 0\nDiss3.Mix = 0", INPID_InputControl = "ButtonControl", INP_SplineType = "Default", LINKS_Name = "编辑遮罩 1", },
+						btnEditM2 = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ButtonControl", BTNCS_Execute = "comp:FindTool(\"m1\").ShowViewControls = 0\nm2.ShowViewControls = 1\nm3.ShowViewControls = 0\nDiss2.Mix = 1\nDiss3.Mix = 0", INP_MaxScale = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", ICD_Width = 0.330000013113022, INP_SplineType = "Default", LINKS_Name = "编辑遮罩 2", },
+						btnEditM3 = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ButtonControl", BTNCS_Execute = "comp:FindTool(\"m1\").ShowViewControls = 0\nm2.ShowViewControls = 0\nm3.ShowViewControls = 1\nDiss2.Mix = 0\nDiss3.Mix = 1", INP_MaxScale = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", ICD_Width = 0.330000013113022, INP_SplineType = "Default", LINKS_Name = "编辑遮罩 3", },
+						Separator = { INP_Integer = true, INPID_InputControl = "SeparatorControl", INP_Passive = true, LINKID_DataType = "Number", LINKS_Name = "", },
+						Blank = { INP_Integer = true, LBLC_DropDownButton = false, INPID_InputControl = "LabelControl", LBLC_NumInputs = 1, INP_External = false, LINKID_DataType = "Number", INP_Passive = true, LINKS_Name = "", IC_Visible = true, },
+						FlashControls = {
+							LINKS_Name = "闪光控制",
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							LINKID_DataType = "Number",
+							LBLC_NumInputs = 3,
+							INPID_InputControl = "LabelControl",
+							INP_SplineType = "Default",
+							IC_Visible = true,
+						},
+						ShakeControls = {
+							LINKS_Name = "抖动控制",
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							LINKID_DataType = "Number",
+							LBLC_NumInputs = 8,
+							INPID_InputControl = "LabelControl",
+							INP_SplineType = "Default",
+							IC_Visible = true,
+						},
+						M1Controls = {
+							LINKS_Name = "遮罩 1 控制",
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							LINKID_DataType = "Number",
+							LBLC_NumInputs = 12,
+							INPID_InputControl = "LabelControl",
+							INP_SplineType = "Default",
+							IC_Visible = false,
+						},
+						M2Controls = {
+							LINKS_Name = "遮罩 2 控制",
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							LINKID_DataType = "Number",
+							LBLC_NumInputs = 12,
+							INPID_InputControl = "LabelControl",
+							INP_SplineType = "Default",
+							IC_Visible = false,
+						},
+						M3Controls = {
+							LINKS_Name = "遮罩 3 控制",
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							LINKID_DataType = "Number",
+							LBLC_NumInputs = 11,
+							INPID_InputControl = "LabelControl",
+							INP_SplineType = "Default",
+							IC_Visible = false,
+						},
+						MasksControls = {
+							LINKS_Name = "物体遮罩控制",
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							LINKID_DataType = "Number",
+							LBLC_NumInputs = 38,
+							INPID_InputControl = "LabelControl",
+							INP_SplineType = "Default",
+							IC_Visible = true,
+						},
+						BG1Controls = {
+							LINKS_Name = "背景类型 1 控制",
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							LINKID_DataType = "Number",
+							LBLC_NumInputs = 4,
+							INPID_InputControl = "LabelControl",
+							INP_SplineType = "Default",
+							IC_Visible = false,
+						},
+						BG2Controls = {
+							LINKS_Name = "背景类型 2 控制",
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							LINKID_DataType = "Number",
+							LBLC_NumInputs = 1,
+							INPID_InputControl = "LabelControl",
+							INP_SplineType = "Default",
+							IC_Visible = false,
+						},
+						BGControls = {
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							LINKID_DataType = "Number",
+							LBLC_NumInputs = 14,
+							INPID_InputControl = "LabelControl",
+							INP_SplineType = "Default",
+							LINKS_Name = "背景控制",
+						},
+						btnMBON = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							INPID_InputControl = "ButtonControl",
+							BTNCS_Execute = "-- MB ON\nlocal function Exp(meno, expr)\n	local tool = comp:FindTool(meno)\n	tool.MotionBlur:SetExpression(expr)\nend\ncomp:FindTool(\"LL\").btnMBON:SetAttrs({INPS_Name = \"运动模糊 开 ✅ \"})\ncomp:FindTool(\"LL\").btnMBOFF:SetAttrs({INPS_Name = \"运动模糊 关\"})\nExp(\"xfMove1\", \"iif(LL.A1>0 and LL.A1<1, 1, 0)\")\nExp(\"xfMove2\", \"iif(LL.A1>0 and LL.A1<1, 1, 0)\")\nExp(\"xfMove3\", \"iif(LL.A1>0 and LL.A1<1, 1, 0)\")\nExp(\"xfMove0\", \"iif(LL.A2>0 and LL.A2<1, 1, 0)\")\nExp(\"xfMove4\", \"iif(LL.A2>0 and LL.A2<1, 1, 0)\")\nExp(\"xfMove5\", \"iif(LL.A2>0 and LL.A2<1, 1, 0)\")\nExp(\"camShake\", \"iif(LL.A2>0 and LL.A2<1, 1, 0)\")\nfor i= 0, 5 do\n	node=comp:FindTool(\"dBlur\"..i)\n	node:SetAttrs({TOOLB_PassThrough = false})\nend\n",
+							INP_MaxScale = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							ICD_Width = 0.490000009536743,
+							INP_SplineType = "Default",
+							LINKS_Name = "✅ 运动模糊 开",
+						},
+						btnMBOFF = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							INPID_InputControl = "ButtonControl",
+							BTNCS_Execute = "-- MB OFF\nlocal function Exp(meno, expr)\n	local tool = comp:FindTool(meno)\n	tool.MotionBlur:SetExpression(expr)\n		tool.MotionBlur=0\nend\ncomp:FindTool(\"LL\").btnMBON:SetAttrs({INPS_Name = \"运动模糊 开\"})\ncomp:FindTool(\"LL\").btnMBOFF:SetAttrs({INPS_Name = \"运动模糊 关 ✅\"})\nExp(\"camShake\", nil) \nExp(\"xfMove0\", nil)\nExp(\"xfMove1\", nil)\nExp(\"xfMove2\", nil)\nExp(\"xfMove3\", nil)\nExp(\"xfMove4\", nil)\nExp(\"xfMove5\", nil)\nfor i= 0, 5 do\n	node=comp:FindTool(\"dBlur\"..i)\n	node:SetAttrs({TOOLB_PassThrough = true})\nend",
+							INP_MaxScale = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							ICD_Width = 0.490000009536743,
+							INP_SplineType = "Default",
+							LINKS_Name = "运动模糊 关",
+						},
+						Tutorial = {
+							TEC_ReadOnly = true,
+							LINKID_DataType = "Text",
+							LINKS_Name = "教程",
+							INPID_InputControl = "TextEditControl",
+							TEC_Lines = 7,
+							TEC_Wrap = false,
+						}
+					}
+				},
+				acA1 = LUTLookup {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Curve = Input { Value = FuID { "Custom" }, },
+						Lookup = Input {
+							SourceOp = "acA1Lookup",
+							Source = "Value",
+						}
+					},
+				},
+				acA1Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.135828877005348, 0.244444444444444 }, Flags = { Linear = true } },
+							[0.6] = { 1, LH = { 0.13048128342246, 0.991111111111111 }, RH = { 0.733321843263586, 1.00242462287287 } },
+							[1] = { 1, LH = { 0.866666666666667, 1 } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				acA2 = LUTLookup {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Curve = Input { Value = FuID { "Custom" }, },
+						EaseIn = Input { Value = FuID { "Cubic" }, },
+						EaseOut = Input { Value = FuID { "Cubic" }, },
+						Lookup = Input {
+							SourceOp = "acA2Lookup",
+							Source = "Value",
+						},
+						TimeScale = Input { Expression = "1/(1-TimeOffset)", }
+					},
+				},
+				acA2Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0, 0 }, Flags = { Linear = true } },
+							[1e-09] = { 0, LH = { 0, 0 }, RH = { 0.133333333333333, 0 }, offset = 1e-09 },
+							[0.4] = { 0, LH = { 0.266666666666667, 0 }, RH = { 0.459893048128342, 0.234074074074074 } },
+							[1] = { 1, LH = { 0.410948259258072, 0.992592592592593 } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				xfMove0 = Transform {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						MotionBlur = Input {
+							Value = 1,
+							Expression = "iif(LL.A2>0 and LL.A2<1, 1, 0)",
+						},
+						Quality = Input { Value = 5, },
+						ShutterAngle = Input { Value = 360, },
+						Center = Input {
+							SourceOp = "Vektor0",
+							Source = "Position",
+						},
+						Size = Input {
+							SourceOp = "acVelkost0",
+							Source = "Value",
+						},
+						Angle = Input {
+							SourceOp = "acUhol0",
+							Source = "Value",
+						},
+						Input = Input {
+							SourceOp = "TS",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -220.969, 172.758 } },
+					UserControls = ordered() {
+						btnL = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							INPID_InputControl = "ButtonControl",
+							BTNCS_Execute = "comp:FindTool(\"Vektor0\").Angle = 0\ndruh0.Mix = 1\nLL.BG1Controls = 1\nLL.BG2Controls = 0",
+							INP_MaxScale = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							ICD_Width = 0.159999996423721,
+							INP_SplineType = "Default",
+							LINKS_Name = "←",
+						},
+						btnU = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							INPID_InputControl = "ButtonControl",
+							BTNCS_Execute = "-- ↑\ncomp:FindTool(\"Vektor0\").Angle = -90\ndruh0.Mix = 1\nLL.BG1Controls = 1\nLL.BG2Controls = 0",
+							INP_MaxScale = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							ICD_Width = 0.159999996423721,
+							INP_SplineType = "Default",
+							LINKS_Name = "↑",
+						},
+						btnD = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							INPID_InputControl = "ButtonControl",
+							BTNCS_Execute = "-- ↓\ncomp:FindTool(\"Vektor0\").Angle = 90\ndruh0.Mix = 1\nLL.BG1Controls = 1\nLL.BG2Controls = 0",
+							INP_MaxScale = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							ICD_Width = 0.159999996423721,
+							INP_SplineType = "Default",
+							LINKS_Name = "↓",
+						},
+						btnR = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							INPID_InputControl = "ButtonControl",
+							BTNCS_Execute = "-- →\ncomp:FindTool(\"Vektor0\").Angle = 180\ndruh0.Mix = 1\nLL.BG1Controls = 1\nLL.BG2Controls = 0",
+							INP_MaxScale = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							ICD_Width = 0.159999996423721,
+							INP_SplineType = "Default",
+							LINKS_Name = "→",
+						},
+						btnH = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							INPID_InputControl = "ButtonControl",
+							BTNCS_Execute = "-- HORIZONTAL\ncomp:FindTool(\"m0_1\").Center:SetExpression(\"Point(Width/2, 0.5)\")\nm0_1.Width:SetExpression(\"pointPOS.Center.X\")\nm0_1.Height:SetExpression(\"1\")\nVektor0_1.Angle=0\ncomp:FindTool(\"m0_2\").Center:SetExpression(\"Point(1-Width/2, 0.5)\")\nm0_2.Width:SetExpression(\"1-m0_1.Width\")\nm0_2.Height:SetExpression(\"1\")\nVektor0_2.Angle=180\ndruh0.Mix = 0\nLL.BG1Controls = 0\nLL.BG2Controls = 1",
+							INP_MaxScale = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							ICD_Width = 0.170000001788139,
+							INP_SplineType = "Default",
+							LINKS_Name = "↔",
+						},
+						btnV = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							INPID_InputControl = "ButtonControl",
+							BTNCS_Execute = "-- VERITCAL\ncomp:FindTool(\"m0_1\").Center:SetExpression(\"Point(0.5, Height/2)\")\nm0_1.Height:SetExpression(\"pointPOS.Center.Y\")\nm0_1.Width:SetExpression(\"1\")\nVektor0_1.Angle=90\ncomp:FindTool(\"m0_2\").Center:SetExpression(\"Point(0.5, 1-Height/2)\")\nm0_2.Height:SetExpression(\"1-m0_1.Height\")\nm0_2.Width:SetExpression(\"1\")\nVektor0_2.Angle=270\ndruh0.Mix = 0\nLL.BG1Controls = 0\nLL.BG2Controls = 1\n",
+							INP_MaxScale = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							ICD_Width = 0.180000007152557,
+							INP_SplineType = "Default",
+							LINKS_Name = "↕",
+						}
+					}
+				},
+				Vektor0 = Vector {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Distance = Input {
+							SourceOp = "acPohyb0",
+							Source = "Value",
+						},
+						Angle = Input { Value = 180, },
+						ImageAspect = Input { Value = 1, }
+					},
+				},
+				acPohyb0 = LUTLookup {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Source = Input { Value = FuID { "Custom" }, },
+						Input = Input {
+							Value = 0.998671016686713,
+							Expression = "LL.A2",
+						},
+						Lookup = Input {
+							SourceOp = "acPohyb0Lookup",
+							Source = "Value",
+						},
+						Invert = Input { Value = 1, }
+					},
+				},
+				acPohyb0Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0, 0 }, Flags = { Linear = true } },
+							[1e-09] = { 0, LH = { 0, 0 }, RH = { 0.333333333333333, 0 }, offset = 1e-09 },
+							[1] = { 1, LH = { 0.260249554367201, 1 } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				acVelkost0 = LUTLookup {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Source = Input { Value = FuID { "Custom" }, },
+						Input = Input {
+							Value = 0.998671016686713,
+							Expression = "LL.A2",
+						},
+						Lookup = Input {
+							SourceOp = "acVelkost1_2Lookup",
+							Source = "Value",
+						},
+						Scale = Input {
+							Value = 0,
+							Expression = "1-Offset",
+						},
+						Offset = Input { Value = 1, }
+					},
+				},
+				acVelkost1_2Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 0, Green = 0, Blue = 0 },
+					CtrlWZoom = false,
+				},
+				acUhol0 = LUTLookup {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Source = Input { Value = FuID { "Custom" }, },
+						Input = Input {
+							Value = 0.998671016686713,
+							Expression = "LL.A2",
+						},
+						Lookup = Input {
+							SourceOp = "acUhol1_2Lookup",
+							Source = "Value",
+						},
+						Invert = Input { Value = 1, },
+						Scale = Input { Value = 0, }
+					},
+				},
+				acUhol1_2Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 0, Green = 0, Blue = 0 },
+					CtrlWZoom = false,
+				},
+				xfMove1 = Transform {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						MotionBlur = Input { Expression = "iif(LL.A1>0 and LL.A1<1, 1, 0)", },
+						Quality = Input { Value = 5, },
+						Center = Input {
+							SourceOp = "Vektor1",
+							Source = "Position",
+						},
+						Size = Input {
+							SourceOp = "acVelkost1",
+							Source = "Value",
+						},
+						Angle = Input {
+							SourceOp = "acUhol1",
+							Source = "Value",
+						},
+						Input = Input {
+							SourceOp = "mask1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -110.969, 172.758 } },
+					UserControls = ordered() { btnL = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ButtonControl", BTNCS_Execute = "comp:FindTool(\"Vektor1\").Angle = 0", INP_MaxScale = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", ICD_Width = 0.25, INP_SplineType = "Default", LINKS_Name = "←", }, btnU = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ButtonControl", BTNCS_Execute = "comp:FindTool(\"Vektor1\").Angle = -90", INP_MaxScale = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", ICD_Width = 0.25, INP_SplineType = "Default", LINKS_Name = "↑", }, btnD = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ButtonControl", BTNCS_Execute = "comp:FindTool(\"Vektor1\").Angle = 90", INP_MaxScale = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", ICD_Width = 0.25, INP_SplineType = "Default", LINKS_Name = "↓", }, btnR = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ButtonControl", BTNCS_Execute = "comp:FindTool(\"Vektor1\").Angle = 180", INP_MaxScale = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", ICD_Width = 0.25, INP_SplineType = "Default", LINKS_Name = "→", } }
+				},
+				Vektor1 = Vector {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Distance = Input {
+							SourceOp = "acPohyb1",
+							Source = "Value",
+						},
+						Angle = Input { Value = 90, },
+						ImageAspect = Input { Value = 1, }
+					},
+				},
+				acPohyb1 = LUTLookup {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Source = Input { Value = FuID { "Custom" }, },
+						Input = Input {
+							Value = 0.99952091379678,
+							Expression = "LL.A1",
+						},
+						Lookup = Input {
+							SourceOp = "ACMedia1_1Lookup",
+							Source = "Value",
+						},
+						Invert = Input { Value = 1, }
+					},
+				},
+				ACMedia1_1Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0, 0 }, Flags = { Linear = true } },
+							[1e-09] = { 0, LH = { 0, 0 }, RH = { 0.333333333333333, 0 }, offset = 1e-09 },
+							[1] = { 1, LH = { 0.260249554367201, 1 } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				acVelkost1 = LUTLookup {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Source = Input { Value = FuID { "Custom" }, },
+						Input = Input {
+							Value = 0.99952091379678,
+							Expression = "LL.A1",
+						},
+						Lookup = Input {
+							SourceOp = "AnimCurves2Lookup1",
+							Source = "Value",
+						},
+						Scale = Input {
+							Value = 0,
+							Expression = "1-Offset",
+						},
+						Offset = Input { Value = 1, }
+					},
+				},
+				AnimCurves2Lookup1 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 0, Green = 0, Blue = 0 },
+					CtrlWZoom = false,
+				},
+				acUhol1 = LUTLookup {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Source = Input { Value = FuID { "Custom" }, },
+						Input = Input {
+							Value = 0.99952091379678,
+							Expression = "LL.A1",
+						},
+						Lookup = Input {
+							SourceOp = "AnimCurves1Lookup1",
+							Source = "Value",
+						},
+						Invert = Input { Value = 1, },
+						Scale = Input { Value = 0, }
+					},
+				},
+				AnimCurves1Lookup1 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 0, Green = 0, Blue = 0 },
+					CtrlWZoom = false,
+				},
+				xfMove2 = Transform {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						MotionBlur = Input { Expression = "iif(LL.A1>0 and LL.A1<1, 1, 0)", },
+						Quality = Input {
+							Value = 5,
+							Expression = "xfMove1.Quality",
+						},
+						ShutterAngle = Input { Expression = "xfMove1.ShutterAngle", },
+						Center = Input {
+							SourceOp = "Vektor2",
+							Source = "Position",
+						},
+						Size = Input {
+							SourceOp = "acVelkost2",
+							Source = "Value",
+						},
+						Angle = Input {
+							SourceOp = "acUhol2",
+							Source = "Value",
+						},
+						Input = Input {
+							SourceOp = "mask2",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -0.96875, 172.758 } },
+					UserControls = ordered() { btnL = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ButtonControl", BTNCS_Execute = "comp:FindTool(\"Vektor2\").Angle = 0", INP_MaxScale = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", ICD_Width = 0.25, INP_SplineType = "Default", LINKS_Name = "←", }, btnU = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ButtonControl", BTNCS_Execute = "comp:FindTool(\"Vektor2\").Angle = -90", INP_MaxScale = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", ICD_Width = 0.25, INP_SplineType = "Default", LINKS_Name = "↑", }, btnD = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ButtonControl", BTNCS_Execute = "comp:FindTool(\"Vektor2\").Angle = 90", INP_MaxScale = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", ICD_Width = 0.25, INP_SplineType = "Default", LINKS_Name = "↓", }, btnR = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ButtonControl", BTNCS_Execute = "comp:FindTool(\"Vektor2\").Angle = 180", INP_MaxScale = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", ICD_Width = 0.25, INP_SplineType = "Default", LINKS_Name = "→", } }
+				},
+				Vektor2 = Vector {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Distance = Input {
+							SourceOp = "acPohyb2",
+							Source = "Value",
+						},
+						Angle = Input { Value = -90, },
+						ImageAspect = Input { Value = 1, }
+					},
+				},
+				acPohyb2 = LUTLookup {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Source = Input { Value = FuID { "Custom" }, },
+						Input = Input {
+							Value = 0.99952091379678,
+							Expression = "LL.A1",
+						},
+						Lookup = Input {
+							SourceOp = "acPohyb1_1Lookup",
+							Source = "Value",
+						},
+						Invert = Input { Value = 1, }
+					},
+				},
+				acPohyb1_1Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0, 0 }, Flags = { Linear = true } },
+							[1e-09] = { 0, LH = { 0, 0 }, RH = { 0.333333333333333, 0 }, offset = 1e-09 },
+							[1] = { 1, LH = { 0.260249554367201, 1 } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				acVelkost2 = LUTLookup {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Source = Input { Value = FuID { "Custom" }, },
+						Input = Input {
+							Value = 0.99952091379678,
+							Expression = "LL.A1",
+						},
+						Lookup = Input {
+							SourceOp = "acVelkost1_1Lookup",
+							Source = "Value",
+						},
+						Scale = Input {
+							Value = 0,
+							Expression = "1-Offset",
+						},
+						Offset = Input { Value = 1, }
+					},
+				},
+				acVelkost1_1Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 0, Green = 0, Blue = 0 },
+					CtrlWZoom = false,
+				},
+				acUhol2 = LUTLookup {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Source = Input { Value = FuID { "Custom" }, },
+						Input = Input {
+							Value = 0.99952091379678,
+							Expression = "LL.A1",
+						},
+						Lookup = Input {
+							SourceOp = "acUhol1_1Lookup",
+							Source = "Value",
+						},
+						Invert = Input { Value = 1, },
+						Scale = Input { Value = 0, }
+					},
+				},
+				acUhol1_1Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 0, Green = 0, Blue = 0 },
+					CtrlWZoom = false,
+				},
+				xfMove3 = Transform {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						MotionBlur = Input { Expression = "iif(LL.A1>0 and LL.A1<1, 1, 0)", },
+						Quality = Input {
+							Value = 5,
+							Expression = "xfMove1.Quality",
+						},
+						ShutterAngle = Input { Expression = "xfMove1.ShutterAngle", },
+						Center = Input {
+							SourceOp = "Vektor3",
+							Source = "Position",
+						},
+						Size = Input {
+							SourceOp = "acVelkost3",
+							Source = "Value",
+						},
+						Angle = Input {
+							SourceOp = "acUhol3",
+							Source = "Value",
+						},
+						Input = Input {
+							SourceOp = "mask3",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 109.031, 172.758 } },
+					UserControls = ordered() { btnL = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ButtonControl", BTNCS_Execute = "comp:FindTool(\"Vektor3\").Angle = 0", INP_MaxScale = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", ICD_Width = 0.25, INP_SplineType = "Default", LINKS_Name = "←", }, btnU = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ButtonControl", BTNCS_Execute = "comp:FindTool(\"Vektor3\").Angle = -90", INP_MaxScale = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", ICD_Width = 0.25, INP_SplineType = "Default", LINKS_Name = "↑", }, btnD = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ButtonControl", BTNCS_Execute = "comp:FindTool(\"Vektor3\").Angle = 90", INP_MaxScale = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", ICD_Width = 0.25, INP_SplineType = "Default", LINKS_Name = "↓", }, btnR = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ButtonControl", BTNCS_Execute = "comp:FindTool(\"Vektor3\").Angle = 180", INP_MaxScale = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", ICD_Width = 0.25, INP_SplineType = "Default", LINKS_Name = "→", } }
+				},
+				Vektor3 = Vector {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Distance = Input {
+							SourceOp = "acPohyb3",
+							Source = "Value",
+						},
+						ImageAspect = Input { Value = 1, }
+					},
+				},
+				acPohyb3 = LUTLookup {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Source = Input { Value = FuID { "Custom" }, },
+						Input = Input {
+							Value = 0.99952091379678,
+							Expression = "LL.A1",
+						},
+						Lookup = Input {
+							SourceOp = "acPohyb2_1Lookup",
+							Source = "Value",
+						},
+						Invert = Input { Value = 1, }
+					},
+				},
+				acPohyb2_1Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0, 0 }, Flags = { Linear = true } },
+							[1e-09] = { 0, LH = { 0, 0 }, RH = { 0.333333333333333, 0 }, offset = 1e-09 },
+							[1] = { 1, LH = { 0.260249554367201, 1 } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				acVelkost3 = LUTLookup {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Source = Input { Value = FuID { "Custom" }, },
+						Input = Input {
+							Value = 0.99952091379678,
+							Expression = "LL.A1",
+						},
+						Lookup = Input {
+							SourceOp = "acVelkost2_1Lookup",
+							Source = "Value",
+						},
+						Scale = Input {
+							Value = 0,
+							Expression = "1-Offset",
+						},
+						Offset = Input { Value = 1, }
+					},
+				},
+				acVelkost2_1Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 0, Green = 0, Blue = 0 },
+					CtrlWZoom = false,
+				},
+				acUhol3 = LUTLookup {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Source = Input { Value = FuID { "Custom" }, },
+						Input = Input {
+							Value = 0.99952091379678,
+							Expression = "LL.A1",
+						},
+						Lookup = Input {
+							SourceOp = "acUhol2_1Lookup",
+							Source = "Value",
+						},
+						Invert = Input { Value = 1, },
+						Scale = Input { Value = 0, }
+					},
+				},
+				acUhol2_1Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 0, Green = 0, Blue = 0 },
+					CtrlWZoom = false,
+				},
+				m1 = PolylineMask {
+					DrawMode = "ClickAppend",
+					DrawMode2 = "InsertAndModify",
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						CapStyle = Input { Value = 0, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Polyline = Input {
+							Value = Polyline {
+							},
+						},
+						Polyline2 = Input {
+							Value = Polyline {
+							},
+							Disabled = true,
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -165.969, 73.7576 } },
+					UserControls = ordered() { Reset = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ButtonControl", BTNCS_Execute = "m1.Polyline = 0", INP_MaxScale = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", INP_External = false, INP_SplineType = "Default", LINKS_Name = "重置遮罩 1", } }
+				},
+				m2 = PolylineMask {
+					DrawMode = "ClickAppend",
+					DrawMode2 = "InsertAndModify",
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						ShowViewControls = Input { Value = 0, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						CapStyle = Input { Value = 0, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Polyline = Input {
+							Value = Polyline {
+							},
+						},
+						Polyline2 = Input {
+							Value = Polyline {
+							},
+							Disabled = true,
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -55.9688, 73.7576 } },
+					UserControls = ordered() { Reset = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ButtonControl", BTNCS_Execute = "m2.Polyline = 0", INP_MaxScale = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", INP_External = false, INP_SplineType = "Default", LINKS_Name = "重置遮罩 2", } }
+				},
+				m3 = PolylineMask {
+					DrawMode = "ClickAppend",
+					DrawMode2 = "InsertAndModify",
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						ShowViewControls = Input { Value = 0, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						CapStyle = Input { Value = 0, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Polyline = Input {
+							Value = Polyline {
+							},
+						},
+						Polyline2 = Input {
+							Value = Polyline {
+							},
+							Disabled = true,
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 54.0312, 73.7576 } },
+					UserControls = ordered() { Reset = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ButtonControl", BTNCS_Execute = "m3.Polyline = 0", INP_MaxScale = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", INP_External = false, INP_SplineType = "Default", LINKS_Name = "重置遮罩 3", } }
+				},
+				pointPOS = Merge {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Blend = Input {
+							Value = 0,
+							Expression = "iif (LL.Pointer==1, 1, 0)",
+						},
+						Background = Input {
+							SourceOp = "DissPreview",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "cPointer",
+							Source = "Output",
+						},
+						Center = Input {
+							SourceOp = "Publish1",
+							Source = "Value",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 659.031, 337.758 } },
+					Colors = { TileColor = { R = 0.584313725490196, G = 0.294117647058824, B = 0.803921568627451 }, }
+				},
+				Publish1 = PublishPoint {
+					CtrlWZoom = false,
+					Inputs = {
+						Value = Input { Value = { 0.357, 0.5 }, }
+					},
+				},
+				camShake = CameraShake {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						MotionBlur = Input {
+							Value = 1,
+							Expression = "iif(LL.A2>0 and LL.A2<1, 1, 0)",
+						},
+						RotationDeviation = Input { Value = 0.591, },
+						Randomness = Input { Value = 0.614, },
+						OverallStrength = Input {
+							SourceOp = "AnimCurves1",
+							Source = "Value",
+						},
+						Edges = Input { Value = 3, },
+						Input = Input {
+							SourceOp = "mg1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 274.031, 304.758 } },
+				},
+				AnimCurves1 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Curve = Input { Value = FuID { "Custom" }, },
+						Lookup = Input {
+							SourceOp = "AnimCurves1Lookup2",
+							Source = "Value",
+						},
+						TimeScale = Input { Expression = "acA2.TimeScale", },
+						TimeOffset = Input { Expression = "acA2.TimeOffset", }
+					},
+				},
+				AnimCurves1Lookup2 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.133333333333333, 0 }, Flags = { Linear = true } },
+							[0.4] = { 0, LH = { 0.266666666666667, 0 }, RH = { 0.433329999446869, 0.333299994468687 } },
+							[0.5] = { 1, LH = { 0.5, 1 }, RH = { 0.700099310040667, 0.995933868951089 } },
+							[0.8] = { 0, LH = { 0.7, 0 }, RH = { 0.866666666666667, 0 } },
+							[1] = { 0, LH = { 0.933333333333333, 0 } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				Flash = BrightnessContrast {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Background1",
+							Source = "Output",
+						},
+						Gain = Input {
+							SourceOp = "AnimCurves5",
+							Source = "Value",
+						},
+						Lift = Input {
+							Value = 0.327203502358665,
+							Expression = "(Gain-1)*0.25",
+						},
+						Input = Input {
+							SourceOp = "camShake",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 274.031, 337.758 } },
+				},
+				AnimCurves5 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Curve = Input { Value = FuID { "Custom" }, },
+						Lookup = Input {
+							SourceOp = "AnimCurves5Lookup",
+							Source = "Value",
+						},
+						Scale = Input { Value = 2, },
+						Offset = Input { Value = 1, },
+						TimeScale = Input { Expression = "acA2.TimeScale", },
+						TimeOffset = Input { Expression = "acA2.TimeOffset", }
+					},
+				},
+				AnimCurves5Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.0333333333333333, 0 }, Flags = { Linear = true } },
+							[0.1] = { 0, LH = { 0.0666666666666667, 0 }, RH = { 0.2, 0 } },
+							[0.4] = { 0, LH = { 0.3, 0 }, RH = { 0.400000000333333, 0.333333333333333 } },
+							[0.400000001] = { 1, LH = { 0.400000000666667, 0.666666666666667 }, RH = { 0.426737967914449, 0.882962962962963 }, Flags = { Linear = true }, offset = 1e-09 },
+							[1] = { 0, LH = { 0.482579808783018, 0.292704826038159 } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				mask0_1 = BrightnessContrast {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "m0_1",
+							Source = "Mask",
+						},
+						MultiplyByMask = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "TS",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -550.969, 7.75757 } },
+				},
+				xfMove4 = Transform {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						MotionBlur = Input {
+							Value = 1,
+							Expression = "iif(LL.A2>0 and LL.A2<1, 1, 0)",
+						},
+						Quality = Input {
+							Value = 5,
+							Expression = "xfMove0.Quality",
+						},
+						ShutterAngle = Input {
+							Value = 360,
+							Expression = "xfMove0.ShutterAngle",
+						},
+						Center = Input {
+							SourceOp = "Vektor0_1",
+							Source = "Position",
+						},
+						Input = Input {
+							SourceOp = "mask0_1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -550.969, 73.7576 } },
+				},
+				Vektor0_1 = Vector {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Distance = Input {
+							SourceOp = "acPohyb0_1",
+							Source = "Value",
+						},
+						ImageAspect = Input { Value = 1, }
+					},
+				},
+				acPohyb0_1 = LUTLookup {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Source = Input { Value = FuID { "Custom" }, },
+						Input = Input { Expression = "LL.A2", },
+						Lookup = Input {
+							SourceOp = "acPohyb0_1Lookup",
+							Source = "Value",
+						},
+						Invert = Input { Value = 1, }
+					},
+				},
+				acPohyb0_1Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.0666666666666666, 0 }, Flags = { Linear = true } },
+							[0.2] = { 0, LH = { 0.133333333333334, 0 }, RH = { 0.23458110516934, 0.0296296296296297 } },
+							[0.4] = { 1, LH = { 0.242424242424242, 1 }, RH = { 0.6, 1 } },
+							[1] = { 1, LH = { 0.8, 1 } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				m0_1 = RectangleMask {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						BorderWidth = Input { Value = 0.001, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input {
+							Value = { 0.1785, 0.5 },
+							Expression = "Point(Width/2, 0.5)",
+						},
+						Width = Input {
+							Value = 0.357,
+							Expression = "pointPOS.Center.X",
+						},
+						Height = Input {
+							Value = 1,
+							Expression = "1",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -660.969, 73.7576 } },
+				},
+				dBlur4 = DirectionalBlur {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Length = Input {
+							Value = 0.0481766777273605,
+							Expression = "Vektor0_1.Distance*0.1",
+						},
+						Angle = Input {
+							Value = -180,
+							Expression = "Vektor0_1.Angle-180",
+						},
+						Input = Input {
+							SourceOp = "xfMove4",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -550.969, 106.758 } },
+				},
+				dBlur5 = DirectionalBlur {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Length = Input {
+							Value = 0.0481766777273605,
+							Expression = "Vektor0_2.Distance*0.1",
+						},
+						Angle = Input { Expression = "Vektor0_2.Angle-180", },
+						Input = Input {
+							SourceOp = "xfMove5",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -440.969, 106.758 } },
+				},
+				xfMove5 = Transform {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						MotionBlur = Input {
+							Value = 1,
+							Expression = "iif(LL.A2>0 and LL.A2<1, 1, 0)",
+						},
+						Quality = Input {
+							Value = 5,
+							Expression = "xfMove0.Quality",
+						},
+						ShutterAngle = Input {
+							Value = 360,
+							Expression = "xfMove0.ShutterAngle",
+						},
+						Center = Input {
+							SourceOp = "Vektor0_2",
+							Source = "Position",
+						},
+						Input = Input {
+							SourceOp = "mask0_2",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -440.969, 73.7576 } },
+				},
+				Vektor0_2 = Vector {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Distance = Input {
+							SourceOp = "acPohyb0_2",
+							Source = "Value",
+						},
+						Angle = Input { Value = 180, },
+						ImageAspect = Input { Value = 1, }
+					},
+				},
+				acPohyb0_2 = LUTLookup {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Source = Input { Value = FuID { "Custom" }, },
+						Input = Input { Expression = "LL.A2", },
+						Lookup = Input {
+							SourceOp = "acPohyb0_2Lookup",
+							Source = "Value",
+						},
+						Invert = Input { Value = 1, }
+					},
+				},
+				acPohyb0_2Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0, 0 }, Flags = { Linear = true } },
+							[1e-09] = { 0, LH = { 0, 0 }, RH = { 0.1729055258467, 0.148148148148149 }, offset = 1e-09 },
+							[1] = { 1, LH = { 0.21212121212121, 1 }, RH = { 1, 1 } },
+							[1.000000001] = { 1, LH = { 1, 1 }, offset = 1e-09 }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				mask0_2 = BrightnessContrast {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "m0_2",
+							Source = "Mask",
+						},
+						MultiplyByMask = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "TS",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -440.969, 7.75757 } },
+				},
+				Instance_mask0_2 = BrightnessContrast {
+					CtrlWShown = false,
+					NameSet = true,
+					SourceOp = "mask0_2",
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "m0_2",
+							Source = "Mask",
+						},
+						SettingsNest = Input {
+						},
+						LayersNest = Input {
+						},
+						Input = Input {
+							SourceOp = "dBlur5",
+							Source = "Output",
+						},
+						CommentsNest = Input {
+						},
+						FrameRenderScriptNest = Input {
+						},
+						StartRenderScripts = Input {
+						},
+						EndRenderScripts = Input {
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -440.969, 172.758 } },
+				},
+				Instance_mask0_1 = BrightnessContrast {
+					CtrlWShown = false,
+					NameSet = true,
+					SourceOp = "mask0_1",
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "m0_1",
+							Source = "Mask",
+						},
+						SettingsNest = Input {
+						},
+						LayersNest = Input {
+						},
+						Input = Input {
+							SourceOp = "dBlur4",
+							Source = "Output",
+						},
+						CommentsNest = Input {
+						},
+						FrameRenderScriptNest = Input {
+						},
+						StartRenderScripts = Input {
+						},
+						EndRenderScripts = Input {
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -550.969, 172.758 } },
+				},
+				Merge2 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Instance_mask0_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Instance_mask0_2",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -440.969, 205.758 } },
+				},
+				m0_2 = RectangleMask {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						BorderWidth = Input { Value = 0.001, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input {
+							Value = { 0.6785, 0.5 },
+							Expression = "Point(1-Width/2, 0.5)",
+						},
+						Width = Input {
+							Value = 0.643,
+							Expression = "1-m0_1.Width",
+						},
+						Height = Input {
+							Value = 1,
+							Expression = "1",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -330.969, 73.7576 } },
+				},
+				mask1 = BrightnessContrast {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "m1",
+							Source = "Mask",
+						},
+						MultiplyByMask = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "TS",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -110.969, 106.758 } },
+				},
+				mask2 = BrightnessContrast {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "m2",
+							Source = "Mask",
+						},
+						MultiplyByMask = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "TS",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -0.96875, 106.758 } },
+				},
+				mask3 = BrightnessContrast {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "m3",
+							Source = "Mask",
+						},
+						MultiplyByMask = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "TS",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 109.031, 106.758 } },
+				},
+				Diss3 = Dissolve {
+					Transitions = {
+						[0] = "DFTDissolve"
+					},
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Mix = Input { Value = 0, },
+						Background = Input {
+							SourceOp = "Diss2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "mask3",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 439.031, 106.758 } },
+				},
+				Diss2 = Dissolve {
+					Transitions = {
+						[0] = "DFTDissolve"
+					},
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Mix = Input { Value = 0, },
+						Background = Input {
+							SourceOp = "mask1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "mask2",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 329.031, 106.758 } },
+				},
+				cBG = BrightnessContrast {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Gain = Input { Value = 0.55, },
+						Saturation = Input { Value = 0.5, },
+						Input = Input {
+							SourceOp = "TS",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 329.031, 139.758 } },
+				},
+				Merge1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "cBG",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Diss3",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 439.031, 139.758 } },
+				},
+				DissPreview = Dissolve {
+					Transitions = {
+						[0] = "DFTDissolve"
+					},
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Mix = Input {
+							Value = 0,
+							Expression = "iif (LL.Pointer==1, 1, 0)",
+						},
+						Background = Input {
+							SourceOp = "Flash",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 439.031, 337.758 } },
+				},
+				Rectangle1 = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						ShowViewControls = Input { Value = 0, },
+						Level = Input { Value = 0.5, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Width = Input { Value = 0.04, },
+						Height = Input { Value = 0.004, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 659.031, 205.758 } },
+				},
+				Instance_Rectangle1 = RectangleMask {
+					CtrlWShown = false,
+					SourceOp = "Rectangle1",
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Rectangle1",
+							Source = "Mask",
+						},
+						SettingsNest = Input {
+						},
+						Angle = Input {
+							Value = 90,
+						},
+						["ShapeRasterizer.Nest"] = Input {
+						},
+						CommentsNest = Input {
+						},
+						FrameRenderScriptNest = Input {
+						},
+						StartRenderScripts = Input {
+						},
+						EndRenderScripts = Input {
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 659.031, 238.758 } },
+				},
+				cPointer = Background {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Instance_Rectangle1",
+							Source = "Mask",
+						},
+						GlobalOut = Input { Value = 29, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 659.031, 271.758 } },
+				},
+				Background1 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Rectangle2",
+							Source = "Mask",
+						},
+						GlobalOut = Input { Value = 29, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 1, },
+						TopLeftBlue = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 164.031, 370.758 } },
+				},
+				Rectangle2 = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						ShowViewControls = Input { Value = 0, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						SoftEdge = Input { Value = 0.2, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input {
+							Value = { 0.357, 0.5 },
+							Expression = "pointPOS.Center",
+						},
+						Width = Input { Value = 0.362, },
+						Height = Input { Value = 4, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 164.031, 403.758 } },
+				},
+				mg1 = Merge {
+					NameSet = true,
+					Inputs = {
+						Background = Input {
+							SourceOp = "mg2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "dBlur1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 100.847, 305.574 } },
+				},
+				mg2 = Merge {
+					NameSet = true,
+					Inputs = {
+						Background = Input {
+							SourceOp = "mg3",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "dBlur2",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -11.7391, 307.206 } },
+				},
+				mg3 = Merge {
+					NameSet = true,
+					Inputs = {
+						Background = Input {
+							SourceOp = "mg0",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "dBlur3",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -135.993, 308.022 } },
+				},
+				mg0 = Merge {
+					NameSet = true,
+					Inputs = {
+						Foreground = Input {
+							SourceOp = "druh0",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -275.969, 304.758 } },
+				},
+				druh0 = Dissolve {
+					Transitions = {
+						[0] = "DFTDissolve"
+					},
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Mix = Input { Value = 0, },
+						Background = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "dBlur0",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -275.969, 271.758 } },
+				},
+				dBlur0 = DirectionalBlur {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Length = Input {
+							Value = 0.0028077982908687,
+							Expression = "Vektor0.Distance*0.1",
+						},
+						Angle = Input { Expression = "Vektor0.Angle-180", },
+						Input = Input {
+							SourceOp = "xfMove0",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -220.969, 205.758 } },
+				},
+				dBlur1 = DirectionalBlur {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Length = Input {
+							Value = 0.00199565667256414,
+							Expression = "Vektor1.Distance*0.1",
+						},
+						Angle = Input {
+							Value = -90,
+							Expression = "Vektor1.Angle-180",
+						},
+						Input = Input {
+							SourceOp = "xfMove1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -110.969, 205.758 } },
+				},
+				dBlur2 = DirectionalBlur {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Length = Input {
+							Value = 0.00199565667256414,
+							Expression = "Vektor2.Distance*0.1",
+						},
+						Angle = Input {
+							Value = -270,
+							Expression = "Vektor2.Angle-180",
+						},
+						Input = Input {
+							SourceOp = "xfMove2",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -0.96875, 205.758 } },
+				},
+				dBlur3 = DirectionalBlur {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Length = Input {
+							Value = 0.00199565667256414,
+							Expression = "Vektor3.Distance*0.1",
+						},
+						Angle = Input {
+							Value = -180,
+							Expression = "Vektor3.Angle-180",
+						},
+						Input = Input {
+							SourceOp = "xfMove3",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 109.031, 205.758 } },
+				},
+				TS = TimeStretcher {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						SourceTime = Input {
+							Value = 28,
+							Expression = "iif(time<=(comp.RenderEnd-1), comp.RenderEnd-1, time)",
+						},
+						InterpolateBetweenFrames = Input { Value = 0, },
+						SampleSpread = Input { Disabled = true, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -0.96875, 7.75757 } },
+				}
+			},
+		}
+	}
+}
