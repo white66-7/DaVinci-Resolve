@@ -1,0 +1,278 @@
+{
+	Tools = ordered() {
+		MacroTool1 = MacroOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				Spacer2 = Input {
+					Type = "Spacer",
+					Page = "Controls",
+				},
+				Follower1_Text = InstanceInput {
+					SourceOp = "Follower1",
+					Source = "Text",
+				},
+				Follower1_Size = InstanceInput {
+					SourceOp = "Follower1",
+					Source = "Size",
+					Default = 0.08,
+				},
+				small_Text_Center = InstanceInput {
+					SourceOp = "small_Text",
+					Source = "Center",
+					Name = "中心",
+				},
+				small_Text_Font = InstanceInput {
+					SourceOp = "small_Text",
+					Source = "Font",
+					ControlGroup = 1,
+				},
+				Separator1 = Input {
+					Type = "Separator",
+					Page = "Controls",
+				},
+				Spacer1 = Input {
+					Type = "Spacer",
+					Page = "Controls",
+				},
+				Follower2_Text = InstanceInput {
+					SourceOp = "Follower2",
+					Source = "Text",
+				},
+				Follower2_Size = InstanceInput {
+					SourceOp = "Follower2",
+					Source = "Size",
+					Default = 0.08,
+				},
+				Big_text_Center = InstanceInput {
+					SourceOp = "Big_text",
+					Source = "Center",
+					Name = "中心",
+				},
+				Big_text_Font = InstanceInput {
+					SourceOp = "Big_text",
+					Source = "Font",
+					ControlGroup = 2,
+				},
+				Separator2 = Input {
+					Type = "Separator",
+					Page = "Controls",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge1",
+					Source = "Output",
+				},
+				Output1 = InstanceOutput {
+					SourceOp = "Path2",
+					Source = "Heading",
+				},
+				Output2 = InstanceOutput {
+					SourceOp = "Path1",
+					Source = "Heading",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Merge1 = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Big_text",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "small_Text",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 400.667, 63.3939 } },
+				},
+				Big_text = TextPlus {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						MotionBlur = Input { Value = 1, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Wrap = Input { Value = 1, },
+						Center = Input { Value = { 0.5, 0.45 }, },
+						LayoutRotation = Input { Value = 1, },
+						TransformRotation = Input { Value = 1, },
+						Softness1 = Input { Value = 1, },
+						StyledText = Input {
+							SourceOp = "Follower2",
+							Source = "StyledText",
+						},
+						Font = Input { Value = "Alibaba PuHuiTi 3.0", },
+						Style = Input { Value = "105 Heavy", },
+						Size = Input { Value = 0.24, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalJustificationNew = Input { Value = 3, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 204.666, 88.5152 } },
+					Version = 1
+				},
+				Follower2 = StyledTextFollower {
+					CtrlWZoom = false,
+					Inputs = {
+						Order = Input { Value = 7, },
+						Delay = Input { Value = 1.5, },
+						Text = Input {
+							Value = StyledText {
+								Value = "大字部分"
+							},
+						},
+						CharacterOffset = Input {
+							SourceOp = "Path2",
+							Source = "Position",
+						},
+						TransformRotation = Input { Value = 1, },
+						Opacity1 = Input {
+							SourceOp = "Follower2不透明度1",
+							Source = "Value",
+						},
+						Softness1 = Input { Value = 1, },
+						Softness2 = Input { Value = 1, },
+						Softness3 = Input { Value = 1, },
+						Softness4 = Input { Value = 1, },
+						Softness5 = Input { Value = 1, },
+						Softness6 = Input { Value = 1, },
+						Softness7 = Input { Value = 1, },
+						Softness8 = Input { Value = 1, }
+					},
+				},
+				Path2 = PolyPath {
+					DrawMode = "InsertAndModify",
+					CtrlWZoom = false,
+					Inputs = {
+						Displacement = Input {
+							SourceOp = "Path2位移",
+							Source = "Value",
+						},
+						PolyLine = Input {
+							Value = Polyline {
+								Points = {
+									{ Linear = true, LockY = true, X = -0.5, Y = -0.58, RX = 0, RY = 0.0266666666666667 },
+									{ Linear = true, LockY = true, X = -0.5, Y = -0.5, LX = 0, LY = -0.0266666666666667 }
+								}
+							},
+						}
+					},
+				},
+				["Path2位移"] = BezierSpline {
+					SplineColor = { Red = 50, Green = 236, Blue = 33 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[0] = { 0, RH = { 3.66666666666667, 0.333333333333333 }, Flags = { Linear = true, LockedY = true } },
+						[11] = { 1, LH = { 7.33333333333333, 0.666666666666667 }, Flags = { Linear = true, LockedY = true } }
+					}
+				},
+				["Follower2不透明度1"] = BezierSpline {
+					SplineColor = { Red = 179, Green = 28, Blue = 244 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[0] = { 0, RH = { 3.66666666666667, 0.333333333333333 }, Flags = { Linear = true } },
+						[11] = { 1, LH = { 7.33333333333333, 0.666666666666667 }, Flags = { Linear = true } }
+					}
+				},
+				small_Text = TextPlus {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						MotionBlur = Input { Value = 1, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Wrap = Input { Value = 1, },
+						Center = Input { Value = { 0.5, 0.62 }, },
+						LayoutRotation = Input { Value = 1, },
+						TransformRotation = Input { Value = 1, },
+						Softness1 = Input { Value = 1, },
+						StyledText = Input {
+							SourceOp = "Follower1",
+							Source = "StyledText",
+						},
+						Font = Input { Value = "Alibaba PuHuiTi 3.0", },
+						Style = Input { Value = "105 Heavy", },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalJustificationNew = Input { Value = 3, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 203.333, 43.394 } },
+					Version = 1
+				},
+				Follower1 = StyledTextFollower {
+					CtrlWZoom = false,
+					Inputs = {
+						Order = Input { Value = 7, },
+						Delay = Input { Value = 1.5, },
+						Text = Input {
+							Value = StyledText {
+								Value = "小字部分"
+							},
+						},
+						CharacterOffset = Input {
+							SourceOp = "Path1",
+							Source = "Position",
+						},
+						TransformRotation = Input { Value = 1, },
+						TransformPivot = Input { Value = 1, },
+						TransformShear = Input { Value = 1, },
+						Opacity1 = Input {
+							SourceOp = "Follower1不透明度1",
+							Source = "Value",
+						},
+						Softness1 = Input { Value = 1, },
+						Softness2 = Input { Value = 1, },
+						Softness3 = Input { Value = 1, },
+						Softness4 = Input { Value = 1, },
+						Softness5 = Input { Value = 1, },
+						Softness6 = Input { Value = 1, },
+						Softness7 = Input { Value = 1, },
+						Softness8 = Input { Value = 1, }
+					},
+				},
+				Path1 = PolyPath {
+					DrawMode = "InsertAndModify",
+					CtrlWZoom = false,
+					Inputs = {
+						Displacement = Input {
+							SourceOp = "Path1位移",
+							Source = "Value",
+						},
+						PolyLine = Input {
+							Value = Polyline {
+								Points = {
+									{ Linear = true, LockY = true, X = -0.5, Y = -0.53, RX = 0, RY = 0.01 },
+									{ Linear = true, LockY = true, X = -0.5, Y = -0.5, LX = 0, LY = -0.01 }
+								}
+							},
+						}
+					},
+				},
+				["Path1位移"] = BezierSpline {
+					SplineColor = { Red = 50, Green = 236, Blue = 33 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[0] = { 0, RH = { 3.33333333333333, 0.333333333333333 }, Flags = { Linear = true, LockedY = true } },
+						[10] = { 1, LH = { 6.66666666666667, 0.666666666666667 }, Flags = { Linear = true, LockedY = true } }
+					}
+				},
+				["Follower1不透明度1"] = BezierSpline {
+					SplineColor = { Red = 179, Green = 28, Blue = 244 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[0] = { 0, RH = { 3.33333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+						[10] = { 1, LH = { 6.66666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+					}
+				}
+			},
+		}
+	},
+	ActiveTool = "MacroTool1"
+}

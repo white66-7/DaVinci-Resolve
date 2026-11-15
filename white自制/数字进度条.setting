@@ -1,0 +1,196 @@
+{
+	Tools = ordered() {
+		["数字进度条"] = MacroOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				Spacer1 = Input {
+					Type = "Spacer",
+					Page = "Controls",
+				},
+				Text2_StyledText = InstanceInput {
+					SourceOp = "Text2",
+					Source = "StyledText",
+				},
+				Spacer3 = Input {
+					Type = "Spacer",
+					Page = "Controls",
+				},
+				Text2_Font = InstanceInput {
+					SourceOp = "Text2",
+					Source = "Font",
+					ControlGroup = 1,
+				},
+				Text2_Size = InstanceInput {
+					SourceOp = "Text2",
+					Source = "Size",
+					Default = 0.1,
+				},
+				Text2_Center = InstanceInput {
+					SourceOp = "Text2",
+					Source = "Center",
+					Name = "中心",
+				},
+				Separator2 = Input {
+					Type = "Separator",
+					Page = "Controls",
+				},
+				Text1_Font = InstanceInput {
+					SourceOp = "Text1",
+					Source = "Font",
+					ControlGroup = 2,
+				},
+				Text1_Size = InstanceInput {
+					SourceOp = "Text1",
+					Source = "Size",
+					Default = 0.18,
+				},
+				Text1_From = InstanceInput {
+					SourceOp = "Text1",
+					Source = "From",
+					Page = "Controls",
+					Default = 31900000,
+				},
+				Text1_To = InstanceInput {
+					SourceOp = "Text1",
+					Source = "To",
+					Page = "Controls",
+					Default = 50600000,
+				},
+				Text1_Center = InstanceInput {
+					SourceOp = "Text1",
+					Source = "Center",
+					Name = "中心",
+				},
+				Separator1 = Input {
+					Type = "Separator",
+					Page = "Controls",
+				},
+				Text1_Duration = InstanceInput {
+					SourceOp = "Text1",
+					Source = "Duration",
+					Page = "Controls",
+					Default = 36,
+				},
+				Text1_Blur = InstanceInput {
+					SourceOp = "Text1",
+					Source = "Blur",
+					Page = "Controls",
+					Default = 0.04,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Merge1 = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "DirectionalBlur1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Text2",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 567, 12.7879 } },
+				},
+				Text2 = TextPlus {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Wrap = Input { Value = 1, },
+						Center = Input { Value = { 0.5, 0.63 }, },
+						LayoutRotation = Input { Value = 1, },
+						TransformRotation = Input { Value = 1, },
+						Softness1 = Input { Value = 1, },
+						StyledText = Input { Value = "标题", },
+						Font = Input { Value = "Alibaba PuHuiTi 3.0", },
+						Style = Input { Value = "105 Heavy", },
+						Size = Input { Value = 0.1, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalJustificationNew = Input { Value = 3, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 325, 50.3636 } },
+					Version = 1
+				},
+				DirectionalBlur1 = DirectionalBlur {
+					CtrlWShown = false,
+					Inputs = {
+						Length = Input { Expression = "Text1.Blur * (1 - Text1.Progress)^0.67", },
+						Input = Input {
+							SourceOp = "Text1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 460.334, -44.4545 } },
+				},
+				Text1 = TextPlus {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Wrap = Input { Value = 1, },
+						LayoutRotation = Input { Value = 1, },
+						TransformRotation = Input { Value = 1, },
+						Softness1 = Input { Value = 1, },
+						StyledText = Input {
+							Value = "200000000",
+							Expression = "((string.format(\"%d\", math.floor(Text1.From + (Text1.To - Text1.From) * Text1.Progress + 0.5))):reverse():gsub(\"(%d%d%d)\",\"%1,\"):reverse():gsub(\"^,\",\"\"))",
+						},
+						Font = Input { Value = "Barlow Condensed", },
+						Style = Input { Value = "Bold", },
+						Size = Input { Value = 0.18, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						TabSpacing = Input { Value = 1, },
+						AdvancedFontControls = Input { Value = 1, },
+						From = Input { Value = 31900000, },
+						To = Input { Value = 50600000, },
+						Progress = Input { Expression = "1 - (1 - math.min(1, math.max(0, time/Text1.Duration)))^3", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 350.334, -45.6667 } },
+					UserControls = ordered() { From = { INP_MaxAllowed = 1000000000, INP_Integer = true, INPID_InputControl = "ScrewControl", INP_MaxScale = 100000000, INP_Default = 0, INP_MinScale = 0, INP_MinAllowed = 0, LINKID_DataType = "Number", ICS_ControlPage = "Controls", INP_SplineType = "Default", LINKS_Name = "起始数字" }, To = { INP_MaxAllowed = 1000000000, INP_Integer = true, INPID_InputControl = "ScrewControl", INP_MaxScale = 100000000, INP_Default = 10000000, INP_MinScale = 0, INP_MinAllowed = 0, LINKID_DataType = "Number", ICS_ControlPage = "Controls", INP_SplineType = "Default", LINKS_Name = "目标数字" }, Progress = { INP_MaxAllowed = 1, INP_Integer = false, INPID_InputControl = "SliderControl", INP_MaxScale = 1, INP_Default = 1, INP_MinScale = 0, INP_MinAllowed = 0, LINKID_DataType = "Number", INP_SplineType = "Default", LINKS_Name = "进度", }, Duration = {
+							INP_MaxAllowed = 1000,
+							INP_Integer = true,
+							INPID_InputControl = "ScrewControl",
+							INP_MaxScale = 300,
+							INP_Default = 36,
+							INP_MinScale = 1,
+							INP_MinAllowed = 1,
+							LINKID_DataType = "Number",
+							ICS_ControlPage = "Controls",
+							INP_SplineType = "Default",
+							LINKS_Name = "帧时长"
+						}, Blur = {
+							INP_MaxAllowed = 1,
+							INP_Integer = false,
+							INPID_InputControl = "SliderControl",
+							INP_MaxScale = 0.2,
+							INP_Default = 0.04,
+							INP_MinScale = 0,
+							INP_MinAllowed = 0,
+							LINKID_DataType = "Number",
+							ICS_ControlPage = "Controls",
+							INP_SplineType = "Default",
+							LINKS_Name = "拖影强度"
+						} },
+					Version = 1
+				}
+			},
+		}
+	},
+	ActiveTool = "数字进度条"
+}
